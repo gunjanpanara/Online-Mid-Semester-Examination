@@ -41,11 +41,6 @@
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </aside>
-  <!-- /section -->
-<!--   <section id="bottom">
-    <h3>Thanks for visiting . .</h3>
-  </section> -->
-  <!-- /section -->
 </div>
 
 <footer id="footer" class="clearfix">
