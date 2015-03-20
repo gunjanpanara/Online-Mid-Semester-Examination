@@ -29,7 +29,7 @@ $arr = mysql_fetch_assoc($res);
 <?php } ?>
 
     <h3 style="text-transform:capitalize;"><?php echo "Welcome, ".$arr['fname']." ".$arr['lname']; ?></h3><hr>
-    <h4><a href="start_examination.php">Start Examination</a></h4><hr>
+    <h3><u><a href="start_examination.php">Start Examination</a></u></h3><hr>
 
 <?php 
 $q_fetch_register = "select * from reg_gpa where id=$id";

@@ -92,18 +92,18 @@ $res_update_login = executeQuery($q_update_login);
   <div class="form-group">
     <label for="" style="color:#F38094;">Branch* </label><br>
     <select name="branch" value="<?php echo $row_fetch_register['branch']; ?>" class="textbox" required>
-					<option>Administration, Student Section, Library</option>
-					<option>Auto Mobile Engineering</option>
-					<option>Bio Medical Engineering</option>
-					<option>Civil Engineering</option>
-					<option>Computer Engineering</option>
-					<option>Electrical Engineering</option>
-					<option>Electronics & Communication Engineering</option>
-					<option>Information Technology</option>
-					<option>Instrumention & Control Engineering</option>
-					<option>Mechanical Engineering</option>
-					<option>Plastic Engineering</option>
-	</select>
+          <option <?php if($row_fetch_register['branch'] == 'Administration, Student Section, Library') { echo 'selected="selected"'; } ?>>Administration, Student Section, Library</option>
+          <option <?php if($row_fetch_register['branch'] == 'Auto Mobile Engineering') { echo 'selected="selected"'; } ?>>Auto Mobile Engineering</option>
+          <option <?php if($row_fetch_register['branch'] == 'Bio Medical Engineering') { echo 'selected="selected"'; } ?>>Bio Medical Engineering</option>
+          <option <?php if($row_fetch_register['branch'] == 'Civil Engineering') { echo 'selected="selected"'; } ?>>Civil Engineering</option>
+          <option <?php if($row_fetch_register['branch'] == 'Computer Engineering') { echo 'selected="selected"'; } ?>>Computer Engineering</option>
+          <option <?php if($row_fetch_register['branch'] == 'Electrical Engineering') { echo 'selected="selected"'; } ?>>Electrical Engineering</option>
+          <option <?php if($row_fetch_register['branch'] == 'Electronics & Communication Engineering') { echo 'selected="selected"'; } ?>>Electronics &amp; Communication Engineering</option>
+          <option <?php if($row_fetch_register['branch'] == 'Information Technology') { echo 'selected="selected"'; } ?>>Information Technology</option>
+          <option <?php if($row_fetch_register['branch'] == 'Instrumention & Control Engineering') { echo 'selected="selected"'; } ?>>Instrumention &amp; Control Engineering</option>
+          <option <?php if($row_fetch_register['branch'] == 'Mechanical Engineering') { echo 'selected="selected"'; } ?>>Mechanical Engineering</option>
+          <option <?php if($row_fetch_register['branch'] == 'Plastic Engineering') { echo 'selected="selected"'; } ?>>Plastic Engineering</option>
+  </select>
 	</div>
   <div class="form-group">
     <label for="" style="color:#F38094;">E-Mail ID* </label>
@@ -112,7 +112,7 @@ $res_update_login = executeQuery($q_update_login);
   <div class="form-group">
     <label for="" style="color:#F38094;">Phone* </label>
     <input type="number" name="phone" value="<?php echo $row_fetch_register['phone']; ?>" class="form-control textbox" id="" placeholder="Contact Number" required/>
-  </div>  <div class="form-group">
+  </div>  
   <text>* Fields marked with an asterisk sign are required</text><br><br>
   <button type="submit" class="btn btn-default" name="update" >Update</button>
 

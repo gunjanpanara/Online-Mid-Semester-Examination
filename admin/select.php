@@ -118,7 +118,7 @@ function clearText(field)
     	<option value="">---</option>
 	</select>
 	<br><br>
-  <button type="submit" class="btn btn-default" name="submit" >Next</button>
+  <button type="submit" class="btn btn-default" name="submit" >Next &gt;</button>
 </form>
 
     <section style="margin-top:20%;">

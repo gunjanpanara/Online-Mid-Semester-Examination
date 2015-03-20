@@ -31,15 +31,15 @@
       font-size: 20px;
     }
     </style>
-    <label for="" style="color:#F38094;">Answer : </label> &nbsp
-    <input type="radio" name="answer" value="option_a" id="" /> A &nbsp&nbsp&nbsp&nbsp&nbsp
-    <input type="radio" name="answer" value="option_b" id="" /> B &nbsp&nbsp&nbsp&nbsp&nbsp
-    <input type="radio" name="answer" value="option_c" id="" /> C &nbsp&nbsp&nbsp&nbsp&nbsp
+    <label for="" style="color:#F38094;">Answer : </label> &nbsp;
+    <input type="radio" name="answer" value="option_a" id="" /> A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="answer" value="option_b" id="" /> B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="answer" value="option_c" id="" /> C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <input type="radio" name="answer" value="option_d" id="" /> D
   </div>
 
-  <button type="" class="btn btn-default">Previous</button>
-  <button type="" class="btn btn-default">Next</button>
+  <button type="" class="btn btn-default">&lt; Previous</button>
+  <button type="" class="btn btn-default">Next &gt;</button>
 
 
 </form>

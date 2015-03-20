@@ -116,21 +116,21 @@ if(isset($_REQUEST['submit']))
     <input type="password" name="pswd" class="form-control textbox" id="" placeholder="Password [6-14]" required/>
   </div>
   <div class="form-group">
-    <label for="" style="color:#F38094;">Password* </label>
+    <label for="" style="color:#F38094;">Confirm Password* </label>
     <input type="password" name="pswd" class="form-control textbox" id="" placeholder="confirm password" required/>
   </div>
   <div class="form-group">
     <label for="" style="color:#F38094;">Branch* </label><br>
     <select name="branch" class="textbox" required>
-        	<option value=""><--Select Branch--></option>
+        	<option value="">&lt; - - Select Branch - - &gt;</option>
 					<option value="automobile">AUTO MOBILE ENGINEERING</option>
 					<option value="biomedical">BIO MEDICAL ENGINEERING</option>
 					<option value="biomedical">CIVIL ENGINEERING</option>
 					<option value="computer">COMPUTER ENGINEERING</option>
 					<option value="electrical">ELECTRICAL ENGINEERING</option>
-					<option value="ec">ELECTRONICS & COMMUNICATION ENGINEERING</option>
+					<option value="ec">ELECTRONICS &amp; COMMUNICATION ENGINEERING</option>
 					<option value="it">INFORMATION TECHNOLOGY</option>
-					<option value="ic">INSTRUMENTION & CONTROL ENGINEERING</option>
+					<option value="ic">INSTRUMENTION &amp; CONTROL ENGINEERING</option>
 					<option value="mechanical">MECHANICAL ENGINEERING</option>
 					<option value="plastic">PLASTIC ENGINEERING</option>
 	</select>
@@ -171,11 +171,12 @@ if(isset($_REQUEST['submit']))
     <label for="" style="color:#F38094;">PIN </label>
     <input type="number" name="pin" class="form-control textbox" id="" placeholder="6-digit PIN Number">
   </div>
+  <text>* Fields marked with an asterisk sign are required</text><br><br>
   <button type="submit" class="btn btn-default" name="submit" >Submit</button>
-   <button type="reset" class="btn btn-default" name="reset" >Reset</button>
+  <button type="reset" class="btn btn-default" name="reset" >Reset</button>
 </form>
+</body>
 
     <?php include ('include/footer.php'); ?>
 
-</body>
 </html>

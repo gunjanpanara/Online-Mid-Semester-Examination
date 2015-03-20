@@ -143,12 +143,12 @@ $res_update_login = executeQuery($q_update_login);
     <input type="number" name="pin" value="<?php echo $row_fetch_register['pin']; ?>" class="form-control textbox" id="" placeholder="6-digit PIN Number">
   </div>
   <input type="hidden" name="r_id" value="<?php echo $row_fetch_login['r_id']; ?>" />
+  <text>* Fields marked with an asterisk sign are required</text><br><br>
   <button type="submit" class="btn btn-default" name="update" >Update</button>
 
 </form>
-</body>
 
     <?php include ('include/footer.php'); ?>
 
-
+</body>
 </html>

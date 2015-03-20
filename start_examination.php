@@ -47,7 +47,7 @@ function clearText(field)
     	<option value="">---</option>
 	</select>
 </div>
-<button type="submit" name="submit" class="btn btn-default">Next</button>
+<button type="submit" name="submit" class="btn btn-default">Next &gt;</button>
 </form>
     <?php include ('include/footer.php'); ?>
 
