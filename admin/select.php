@@ -73,59 +73,75 @@ function clearText(field)
 <!DOCTYPE html>
 <html>
 
-    <?php include ('include/head.php'); ?>
+<?php include ('include/head.php'); ?>
 
 <body>
 
-    <?php include ('include/header.php'); ?>
+	<?php include ('include/header.php'); ?>
 
-	<br>
-	<h4>Paper Generation (Select Branch, Semester & Subject)</h4><br>
+	<div class="container select-form-container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<h2 class="text-center">Paper Generation</h2>
+				<p class="text-center">Select Branch, Semester & Subject</p>
+				
+				<form class="form-horizontal" action="select.php" method="post">
+					
+					<div class="form-group">
+						<label for="branchSelect" class="control-label col-md-3">Branch </label>
+						<div class="col-md-5">
+							<select name="branch" class="form-control" id="branchSelect" required autofocus>
+								<option value="">--Select Branch--</option>
+								<option value="automobile">AUTO MOBILE ENGINEERING</option>
+								<option value="biomedical">BIO MEDICAL ENGINEERING</option>
+								<option value="biomedical">CIVIL ENGINEERING</option>
+								<option value="computer">COMPUTER ENGINEERING</option>
+								<option value="electrical">ELECTRICAL ENGINEERING</option>
+								<option value="ec">ELECTRONICS & COMMUNICATION ENGINEERING</option>
+								<option value="it">INFORMATION TECHNOLOGY</option>
+								<option value="ic">INSTRUMENTION & CONTROL ENGINEERING</option>
+								<option value="mechanical">MECHANICAL ENGINEERING</option>
+								<option value="plastic">PLASTIC ENGINEERING</option>
+							</select>
+						</div>
+					</div>
 
-<form action="select.php" method="post">
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Branch : </label><br>
-    <select name="branch" class="textbox" id="branch" required autofocus>
-			    	<option value=""><--Select Branch--></option>
-					<option value="automobile">AUTO MOBILE ENGINEERING</option>
-					<option value="biomedical">BIO MEDICAL ENGINEERING</option>
-					<option value="biomedical">CIVIL ENGINEERING</option>
-					<option value="computer">COMPUTER ENGINEERING</option>
-					<option value="electrical">ELECTRICAL ENGINEERING</option>
-					<option value="ec">ELECTRONICS & COMMUNICATION ENGINEERING</option>
-					<option value="it">INFORMATION TECHNOLOGY</option>
-					<option value="ic">INSTRUMENTION & CONTROL ENGINEERING</option>
-					<option value="mechanical">MECHANICAL ENGINEERING</option>
-					<option value="plastic">PLASTIC ENGINEERING</option>
-	</select>
+					<div class="form-group">
+						<label for="selectSemester" class="control-label col-md-3">Semester </label>
+						<div class="col-md-3">
+							<select name="sem" class="form-control col-md-5" id="selectSemester" required>
+								<option value="">---</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-md-3">Subject </label>
+						<div class="col-md-5">
+							<select name="subject" class="form-control" required>
+								<option value="">--Select Subject--</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-md-offset-3">
+						<button type="submit" class="btn btn-primary" name="submit">Next</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
 	</div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Semester : </label><br>
-    <select name="sem" class="textbox" id="sem" required>
-			    	<option value="">---</option>
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-					<option>6</option>
-					<option>7</option>
-					<option>8</option>
-	</select>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Subject : </label><br>
-    <select name="subject" class="textbox" id="subject" required>
-    	<option value="">---</option>
-	</select>
-	<br><br>
-  <button type="submit" class="btn btn-default" name="submit" >Next &gt;</button>
-</form>
 
-    <section style="margin-top:20%;">
-
-        <?php include ('include/footer.php'); ?>
-
-    </section>
+	<?php include ('include/footer.php'); ?>
 
 </body>
 <html>

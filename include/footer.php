@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html>
-	<center>
-    <section id="copyright" class="clearfix">
-    	<p style="margin-left:10%; margin-top:2%;">Copyright &copy; <?php echo date("Y") ?> - <a href="/">Government Polytechnic, Ahmedabad</a>. All Rights Reserved</p>
-<!--       	<p style="margin-right:10%; margin-top:2%; float:right;"><a target="_blank" href="#">Web Developer</a></p> -->
-    </section>
-    </center>
-</html> 
+<footer>
+	<p class="text-center">&copy; Alll Rights reserved by Government Polytechnic Ahmedabad</p>
+</footer>
+
+<!-- JavaScripts
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/vendor/jquery-1.11.0.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/main.js"></script>

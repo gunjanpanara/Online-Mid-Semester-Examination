@@ -2,13 +2,13 @@
 
 /*
 *********************************************
-*** Title: Student Registration           ***
+*** Title: Examiner Registration           ***
 *********************************************
 */
 
 /* Procedure
 *********************************************
-Step 1: Submit - Add the new Student to the System.
+Step 1: Submit - Add the new Examiner to the System.
       
 Step 2: Display the HTML page to receive the required information.
 *********************************************
@@ -103,68 +103,111 @@ if(isset($_REQUEST['submit']))
 
     <?php include ('include/header.php'); ?>
 
-	<br>
-	<h4>Examiner Registration</h4><br>
-<?php
-      if($_GLOBALS['message']) {
+  <div class="container reg-container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h3 class="text-center">Examiner Registration</h3>
+        <?php
+        if($_GLOBALS['message']) {
           echo "<div class=\"message\">".$_GLOBALS['message']."</div>";
-      }
-?>
- 
-<form id="reg_form" role="form" action="register.php" method="POST">
-  <div class="form-group">
-    <label for="" style="color:#F38094;">First Name* </label>
-    <input type="text" name="fname" class="form-control textbox" id="" placeholder="First Name" required autofocus/>
+        }
+        ?>
+
+        <form id="reg_form" class="form-horizontal" role="form" action="register.php" method="POST">
+
+          <div class="form-group">
+            <label for="firstname" class="control-label col-md-3">Name* </label>
+            <div class="col-md-3">
+              <input type="text" name="fname" class="form-control" id="firstname" placeholder="First Name" required autofocus/>
+            </div>
+            <div class="col-md-3">
+              <input type="text" name="lname" class="form-control" id="lastname" placeholder="Last Name" required/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-md-3">Gender* </label>
+            <div class="radio-inline">
+              <label>
+                <input type="radio" name="gender" value="male" checked>
+                Male 
+              </label>
+            </div>
+            <div class="radio-inline">
+              <label>
+                <input type="radio" name="gender" value="female">
+                Female
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="usernameInput" class="control-label col-md-3">Username*</label>
+            <div class="col-md-5">
+              <input type="text" name="username" class="form-control" id="usernameInput" placeholder="Username" required/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="passwordText" class="control-label col-md-3">Password* </label>
+            <div class="col-md-5">
+              <input type="password" name="pswd" class="form-control" id="passwordText" placeholder="Password [6-14]" required/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="passwordConfirm" class="control-label col-md-3">Confirm Password* </label>
+            <div class="col-md-5">
+              <input type="password" name="pswd_again" class="form-control" id="passwordConfirm" placeholder="Confirm Password" required/>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="selectBranch" class="control-label col-md-3">Branch* </label>
+            <div class="col-md-5">
+              <select name="branch" class="form-control" id="selectBranch" required>
+                <option value="">- - Select Branch - -</option>
+                <option value="automobile">AUTO MOBILE ENGINEERING</option>
+                <option value="biomedical">BIO MEDICAL ENGINEERING</option>
+                <option value="biomedical">CIVIL ENGINEERING</option>
+                <option value="computer">COMPUTER ENGINEERING</option>
+                <option value="electrical">ELECTRICAL ENGINEERING</option>
+                <option value="ec">ELECTRONICS &amp; COMMUNICATION ENGINEERING</option>
+                <option value="it">INFORMATION TECHNOLOGY</option>
+                <option value="ic">INSTRUMENTION &amp; CONTROL ENGINEERING</option>
+                <option value="mechanical">MECHANICAL ENGINEERING</option>
+                <option value="plastic">PLASTIC ENGINEERING</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="emailInput" class="control-label col-md-3">E-Mail ID* </label>
+            <div class="col-md-5">
+              <input type="email" name="email" class="form-control" id="emailInput" placeholder="Valid E-Mail Address" required/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contactNumber" class="control-label col-md-3">Phone* </label>
+            <div class="col-md-5">
+              <input type="number" name="phone" class="form-control" id="contactNumber" placeholder="Contact Number" required/>
+            </div>
+          </div>  
+
+          <div class="form-group">
+          <div class="col-md-6 col-md-offset-3">
+              <p>* Fields marked with an asterisk sign are required</p>
+              <button type="submit" class="btn btn-primary" name="submit" >Submit</button>
+              <button type="reset" class="btn btn-primary" name="reset" >Reset</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Last Name* </label>
-    <input type="text" name="lname" class="form-control textbox" id="" placeholder="Last Name" required/>
-  </div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Gender* </label>
-    <input type="radio" name="gender" value="male" id="" required/>Male
-    <input type="radio" name="gender" value="female" id="" required/>Female
-  </div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">User-name* </label>
-    <input type="text" name="username" class="form-control textbox" id="" placeholder="username" required/>
-  </div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Password* </label>
-    <input type="password" name="pswd" class="form-control textbox" id="" placeholder="Password [6-14]" required/>
-  </div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Confirm Password* </label>
-    <input type="password" name="pswd_again" class="form-control textbox" id="" placeholder="confirm password" required/>
-  </div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Branch* </label><br>
-    <select name="branch" class="textbox" required>
-			    <option value="">&lt; - - Select Branch - - &gt;</option>
-					<option value="automobile">AUTO MOBILE ENGINEERING</option>
-					<option value="biomedical">BIO MEDICAL ENGINEERING</option>
-					<option value="biomedical">CIVIL ENGINEERING</option>
-					<option value="computer">COMPUTER ENGINEERING</option>
-					<option value="electrical">ELECTRICAL ENGINEERING</option>
-					<option value="ec">ELECTRONICS &amp; COMMUNICATION ENGINEERING</option>
-					<option value="it">INFORMATION TECHNOLOGY</option>
-					<option value="ic">INSTRUMENTION &amp; CONTROL ENGINEERING</option>
-					<option value="mechanical">MECHANICAL ENGINEERING</option>
-					<option value="plastic">PLASTIC ENGINEERING</option>
-	</select>
-	</div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">E-Mail ID *</label>
-    <input type="email" name="email" class="form-control textbox" id="" placeholder="Valid E-Mail Address" required/>
-  </div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Phone *</label>
-    <input type="number" name="phone" class="form-control textbox" id="" placeholder="Contact Number" required/>
-  </div>  
-  <text>* Fields marked with an asterisk sign are required</text><br><br>
-  <button type="submit" class="btn btn-default" name="submit" >Submit</button>
-  <button type="reset" class="btn btn-default" name="reset" >Reset</button>
-</form>
+
 </body>
 
     <?php include ('include/footer.php'); ?>

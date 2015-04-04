@@ -1,76 +1,76 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
-    <?php include ('include/head.php'); ?>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="humans.txt">
+	<?php include 'include/head.php';?>
+	<title>WelCome to online exam portal</title>
+
+</head>
 
 <body>
+<?php include 'include/header.php'; ?>
 
-    <?php include ('include/header.php'); ?>
+<div class="container home-container">
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			<p class="lead">Hello Students, <span class="text-danger">Are you ready for the examination ?</span> Let's start here!</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<img src="images/banner.jpg" class="img-responsive banner-img">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<h3>Examinaiton Procedure</h3>
+			<p>
+			<a href="login.php">Log In</a>/<a href="register.php">Registeration (for new user)</a><br>
+			Select Examination Criteria<br>
+			Read 'Examination Rules & Guidelines'<br>
+			Start Examination
+			</p>
+		</div>
+		<div class="col-md-6">
+			<h3>About Us</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<h3 class="text-center">Contact Us</h3>
+			<form role="form" action="#">
+				<div class="form-group">
+					<label for="InputName">Name</label>
+					<input type="text" name="name" class="form-control" id="InputName" placeholder="Enter name">
+				</div>
 
-  <!--/top-->
-  <header>
-    <h1>Hello Students, <span>Are you ready for the examination ?</span> Let's start here!</h1>
-    <h2>&ndash; Examiner &ndash;</h2>
-  </header>
-  <!-- /header -->
-  <section id="slideshow">
-    <div class="html_carousel">
-      <div id="slider" class="clearfix">
-        <!-- Image size 1200px wide and 313px high or the same ratio -->
-        <div class="slide"> <img src="images/slideshow/sliderimage1.jpg" title="Main Building at Government Polyetchnic, Ahmedabad" alt="Image of Main Building at Government Polytechnic, Ahmedabad"> </div>
-      </div>
-    </div>
-  </section>
-  <!-- /section -->
-  <aside id="about" class="left">
-    <h3>Examination Procedure</h3>
-    <p>
-      1. <a href="login.php">Log In</a>/<a href="register.php">Registration (if new user)</a><br>
-      2. Select Proper Criteria<br>
-      3. Read 'Examination Rules & Guidelines'<br>
-      4. Click on "Start" for Examination
-    </p>
-  </aside>
-  <!-- /aside -->
-  <aside class="right">
-    <h3>about us</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  </aside>
+				<div class="form-group">
+					<label for="InputEmail">Email*</label>
+					<input type="email" name="mail" class="form-control" id="InputEmail" placeholder="Enter email" required>
+				</div>
+
+				<div class="form-group">
+					<label for="InputMessage">Message*</label>
+					<textarea rows="4" cols="25" name="message" class="form-control" id="InputMessage" placeholder="Your message for us.." required></textarea>
+				</div>
+				
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+	</div>
 </div>
 
-<footer id="footer" class="clearfix">
-
-    <form id="reg_form" action="#" method="POST" role="form" style="margin-left:10%;">
-      <div class="form-group">
-        <label for="" style="color:#F38094;">Name</label>
-        <input type="text" class="form-control textbox" id="" placeholder="Name">
-      </div>
-      <div class="form-group">
-        <label style="color:#F38094;">Email*</label>
-        <input type="email" class="form-control textbox" id="" placeholder="e-mail" required/>
-      </div>
-      <div class="form-group">
-        <label style="color:#F38094;">Message* : </label><br>
-      <textarea rows="4" cols="25" class="textbox" name="message" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-default" >Submit</button>
-    </form>
-
-    <section class="right social clear" style="margin-right:10%;">
-      <!-- Replace with any 32px x 32px icons -->
-      <a href="#"><img class="icon" src="images/icons/google.png" alt=""></a> 
-      <a href="#"><img class="icon" src="images/icons/youtube.png" alt=""></a> 
-      <a href="#"><img class="icon" src="images/icons/twitter.png" alt=""></a>
-      <a href="#"><img class="icon" src="images/icons/facebook.png" alt=""></a> 
-    </section>
-
-    <?php include ('include/footer.php'); ?>
-
-</footer>
+<?php include 'include/footer.php'; ?>
 </body>
+
 </html>

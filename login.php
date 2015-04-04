@@ -48,28 +48,43 @@ if(isset($_POST['login']))
 
     <?php include ('include/header.php'); ?>
 
-	<br>
-	<h3>Welcome to Online Mid-Semester Examination System of Government Polytechnic, Ahmedabad</h3><br>
-<?php
-       
+ <div class="container login-container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <p class="text-center lead">Welcome to Online Mid-Semester Examination System</p>
+        <?php
+
         if($_GLOBALS['message']) {
-            echo "<div class=\"message\">".$_GLOBALS['message']."</div>";
+          echo "<div class=\"message\">".$_GLOBALS['message']."</div>";
         }
         ?>
-        
-  <form role="form" id="reg_form" action="" method="POST">
-    <div class="form-group">
-      <h4><label for="" style="color:#F38094;">User Name</label></h4>
-      <input type="text" name="uname" class="form-control textbox" id="" placeholder="username" required autofocus/>
-    </div>
-    <div class="form-group">
-      <h4><label for="" style="color:#F38094; text-transform:none;">Password</label></h4>
-      <input type="password" name="pswd" class="form-control textbox" id="" placeholder="password" required/>
-    </div>
-    <button type="submit" name="login" class="btn btn-default" >Submit</button>
-    <button type="reset" class="btn btn-default" >Reset</button>
-  </form>
-</body>
+        <h3 class="text-center">LOGIN</h3>
+
+        <form id="login_form" class="form-horizontal" role="form" action="" method="POST">
+
+          <div class="form-group">
+            <label for="userName" class="control-label col-md-3">User Name </label>
+            <div class="col-md-8">
+              <input type="text" name="uname" class="form-control input-lg" id="userName" placeholder="Username (enrollment no.)" required autofocus/>
+            </div>
+          </div>  
+
+          <div class="form-group">
+            <label for="passwordInput" class="control-label col-md-3">Password </label>
+            <div class="col-md-8">
+              <input type="password" name="pswd" class="form-control input-lg" id="passwordInput" placeholder="Password" required/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-6 col-md-offset-3">
+             <button type="submit" name="login" class="btn btn-primary" >Login</button>
+           </div>
+         </div>
+       </form>
+     </div>
+   </div>
+ </div>
 
     <?php include ('include/footer.php'); ?>
 

@@ -28,98 +28,134 @@ if(isset($_POST['update']))
 	$cdate = date('Y-m-d h:i:s');
 	$mdate = date('Y-m-d h:i:s');
 
-$q_update_register = "update reg_examiner_gpa set fname='$fname', lname='$lname', gender='$gender',branch='$branch',
-email='$email', phone=$phone,mdate='$mdate' where id=$id";
+  $q_update_register = "update reg_examiner_gpa set fname='$fname', lname='$lname', gender='$gender',branch='$branch',
+  email='$email', phone=$phone,mdate='$mdate' where id=$id";
 
-$q_update_login = "update login_examiner_gpa set username='$username',pswd='$pswd' where r_id=$id";
+  $q_update_login = "update login_examiner_gpa set username='$username',pswd='$pswd' where r_id=$id";
 
-$res_update_register = executeQuery($q_update_register);
-$res_update_login = executeQuery($q_update_login);
+  $res_update_register = executeQuery($q_update_register);
+  $res_update_login = executeQuery($q_update_login);
   if(!$res_update_register ){
     die("error....");
     exit();
   }
   if( !$res_update_login)
   {
-     die("error....2");
-    exit();
-  }
+   die("error....2");
+   exit();
+ }
 
-  if($res_update_register && $res_update_login)
-  {
-  	header('location: home.php?edit=yes');
-  }
+ if($res_update_register && $res_update_login)
+ {
+   header('location: home.php?edit=yes');
+ }
 }
 ?>
 
 <!DOCTYPE html>
 <html>
 
-    <?php include ('include/head.php'); ?>
+<?php include ('include/head.php'); ?>
 
 <body>
 
-    <?php include ('include/header.php'); ?>
+  <?php include ('include/header.php'); ?>
 
-	<h4>Update User Profile</h4><br>
+  <div class="container edit-container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h3 class="text-center">Update User Profile</h3>
 
-<form id="reg_form" role="form" action="" method="POST">
-  <div class="form-group">
-    <label for="" style="color:#F38094;">First Name* </label>
-    <input type="text" name="fname" value="<?php echo $row_fetch_register['fname']; ?>" class="form-control textbox" id="" placeholder="First Name" required autofocus/>
-  </div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Last Name* </label>
-    <input type="text" name="lname" value="<?php echo $row_fetch_register['lname']; ?>" class="form-control textbox" id="" placeholder="Last Name" required/>
-  </div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Gender* </label>
-    <input type="radio" name="gender" <?php if($row_fetch_register['gender']=='male') { echo 'checked'; } ?> value='male' id="" required/>Male
-    <input type="radio" name="gender" <?php if($row_fetch_register['gender']=='female') { echo 'checked'; } ?> value='female' id="" required/>Female
-  </div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Usernam*: </label>
-    <input type="text" name="username" value="<?php echo $row_fetch_login['username']; ?>" class="form-control textbox" id="" placeholder="Username" required/>
-  </div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Password* </label>
-    <input type="password" name="pswd" value="<?php echo $row_fetch_login['pswd']; ?>" class="form-control textbox" id="" placeholder="Password [8-12]" required/>
-  </div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Confirm Password* </label>
-    <input type="password" name="pswd_again" value="<?php echo $row_fetch_login['pswd']; ?>" class="form-control textbox" id="" placeholder="confirm password" required/>
-  </div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Branch* </label><br>
-    <select name="branch" value="<?php echo $row_fetch_register['branch']; ?>" class="textbox" required>
-          <option <?php if($row_fetch_register['branch'] == 'Administration, Student Section, Library') { echo 'selected="selected"'; } ?>>Administration, Student Section, Library</option>
-          <option <?php if($row_fetch_register['branch'] == 'Auto Mobile Engineering') { echo 'selected="selected"'; } ?>>Auto Mobile Engineering</option>
-          <option <?php if($row_fetch_register['branch'] == 'Bio Medical Engineering') { echo 'selected="selected"'; } ?>>Bio Medical Engineering</option>
-          <option <?php if($row_fetch_register['branch'] == 'Civil Engineering') { echo 'selected="selected"'; } ?>>Civil Engineering</option>
-          <option <?php if($row_fetch_register['branch'] == 'Computer Engineering') { echo 'selected="selected"'; } ?>>Computer Engineering</option>
-          <option <?php if($row_fetch_register['branch'] == 'Electrical Engineering') { echo 'selected="selected"'; } ?>>Electrical Engineering</option>
-          <option <?php if($row_fetch_register['branch'] == 'Electronics & Communication Engineering') { echo 'selected="selected"'; } ?>>Electronics &amp; Communication Engineering</option>
-          <option <?php if($row_fetch_register['branch'] == 'Information Technology') { echo 'selected="selected"'; } ?>>Information Technology</option>
-          <option <?php if($row_fetch_register['branch'] == 'Instrumention & Control Engineering') { echo 'selected="selected"'; } ?>>Instrumention &amp; Control Engineering</option>
-          <option <?php if($row_fetch_register['branch'] == 'Mechanical Engineering') { echo 'selected="selected"'; } ?>>Mechanical Engineering</option>
-          <option <?php if($row_fetch_register['branch'] == 'Plastic Engineering') { echo 'selected="selected"'; } ?>>Plastic Engineering</option>
-  </select>
-	</div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">E-Mail ID* </label>
-    <input type="email" name="email" value="<?php echo $row_fetch_register['email']; ?>" class="form-control textbox" id="" placeholder="Valid E-Mail Address" required/>
-  </div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Phone* </label>
-    <input type="number" name="phone" value="<?php echo $row_fetch_register['phone']; ?>" class="form-control textbox" id="" placeholder="Contact Number" required/>
-  </div>  
-  <text>* Fields marked with an asterisk sign are required</text><br><br>
-  <button type="submit" class="btn btn-default" name="update" >Update</button>
+        <form id="edit_form" class="form-horizontal" role="form" action="edit_form" method="POST">
 
-</form>
+          <div class="form-group">
+            <label for="name" class="control-label col-sm-3">Name </label>
+            <div class="col-sm-3">
+              <input type="text" name="fname" class="form-control" value="<?php echo $row_fetch_register['fname']; ?>" class="form-control" id="name" placeholder="First Name" required autofocus/>
+            </div>
+            <div class="col-sm-3">
+              <input type="text" name="lname" class="form-control" value="<?php echo $row_fetch_register['lname']; ?>" class="form-control" id="lastname" placeholder="Last Name" required/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-3">Gender </label>
+            <div class="radio-inline">
+              <label>
+                <input type="radio" name="gender" <?php if($row_fetch_register['gender']=='male') { echo 'checked'; } ?> value='male'required/>Male
+              </label>
+            </div>
+            <div class="radio-inline">
+              <label>
+                <input type="radio" name="gender" <?php if($row_fetch_register['gender']=='female') { echo 'checked'; } ?> value='female'required/>Female
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="userNameInput" class="control-label col-sm-3">Username </label>
+            <div class="col-md-5">
+              <input type="text" name="username" class="form-control" value="<?php echo $row_fetch_login['username']; ?>" class="form-control" id="userNameInput" placeholder="Username" required/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="passwordText" class="control-label col-sm-3">Password </label>
+            <div class="col-md-5">
+              <input type="password" name="pswd" class="form-control" value="<?php echo $row_fetch_login['pswd']; ?>" class="form-control" id="passwordText" placeholder="Password [8-12]" required/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="passwordConfirm" class="control-label col-sm-3">Confirm Password </label>
+            <div class="col-md-5">
+              <input type="password" name="pswd_again" class="form-control" value="<?php echo $row_fetch_login['pswd']; ?>" class="form-control" id="passwordConfirm" placeholder="confirm password" required/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="selectBranch" class="control-label col-sm-3">Branch </label>
+            <div class="col-md-5">
+              <select name="branch" class="form-control" value="<?php echo $row_fetch_register['branch']; ?>" id="selectBranch" class="" required>
+                <option <?php if($row_fetch_register['branch'] == 'Administration, Student Section, Library') { echo 'selected="selected"'; } ?>>Administration, Student Section, Library</option>
+                <option <?php if($row_fetch_register['branch'] == 'Auto Mobile Engineering') { echo 'selected="selected"'; } ?>>Auto Mobile Engineering</option>
+                <option <?php if($row_fetch_register['branch'] == 'Bio Medical Engineering') { echo 'selected="selected"'; } ?>>Bio Medical Engineering</option>
+                <option <?php if($row_fetch_register['branch'] == 'Civil Engineering') { echo 'selected="selected"'; } ?>>Civil Engineering</option>
+                <option <?php if($row_fetch_register['branch'] == 'Computer Engineering') { echo 'selected="selected"'; } ?>>Computer Engineering</option>
+                <option <?php if($row_fetch_register['branch'] == 'Electrical Engineering') { echo 'selected="selected"'; } ?>>Electrical Engineering</option>
+                <option <?php if($row_fetch_register['branch'] == 'Electronics & Communication Engineering') { echo 'selected="selected"'; } ?>>Electronics &amp; Communication Engineering</option>
+                <option <?php if($row_fetch_register['branch'] == 'Information Technology') { echo 'selected="selected"'; } ?>>Information Technology</option>
+                <option <?php if($row_fetch_register['branch'] == 'Instrumention & Control Engineering') { echo 'selected="selected"'; } ?>>Instrumention &amp; Control Engineering</option>
+                <option <?php if($row_fetch_register['branch'] == 'Mechanical Engineering') { echo 'selected="selected"'; } ?>>Mechanical Engineering</option>
+                <option <?php if($row_fetch_register['branch'] == 'Plastic Engineering') { echo 'selected="selected"'; } ?>>Plastic Engineering</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="emailInput" class="control-label col-sm-3">E-Mail ID </label>
+            <div class="col-md-5">
+              <input type="email" name="email" class="form-control" value="<?php echo $row_fetch_register['email']; ?>" class="form-control" id="emailInput" placeholder="Valid E-Mail Address" required/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contactNumber" class="control-label col-sm-3">Phone </label>
+            <div class="col-md-5">
+              <input type="number" name="phone" class="form-control" value="<?php echo $row_fetch_register['phone']; ?>" class="form-control" id="contactNumber" placeholder="Contact Number" required/>
+            </div>
+          </div>  
+          <div class="col-md-5 col-md-offset-3">
+            <button type="submit" class="btn btn-primary" name="update">Update</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <?php include ('include/footer.php'); ?>
+
 </body>
-
-    <?php include ('include/footer.php'); ?>
-
 
 </html>
