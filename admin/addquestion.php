@@ -31,7 +31,7 @@ if(isset($_POST['addque']))
   values('$sem','$branch','$subject','$question','$option_a','$option_b','$option_c','$option_d','$answer')";
 
   $res = mysql_query($q,$conn);
-	
+
   if(!$res)
   {
   	die('im');
@@ -45,53 +45,76 @@ if(isset($_POST['addque']))
 <!DOCTYPE html>
 <html>
 
-
-    <?php include ('include/head.php'); ?>
+<?php include ('include/head.php'); ?>
 
 <body>
 
-    <?php include ('include/header.php'); ?>
+  <?php include ('include/header.php'); ?>
 
-	<br>
-	<h4>Paper Generation for Mid-Semester Examination</h4><br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <p class="text-center lead">Generate Paper</p>        
 
-<form id="reg_form" role="form" action="" method="POST">
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Enter Question : </label><br>
-    <textarea rows="4" cols="25" class="textbox" name="question" placeholder="Question" required autofocus></textarea>
-  </div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Option A </label>
-    <input type="text" name="option_a" class="form-control textbox" id="" placeholder="Option A" required>
-  </div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Option B </label>
-    <input type="text" name="option_b" class="form-control textbox" id="" placeholder="Option B" required>
-  </div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Option C </label>
-    <input type="text" name="option_c" class="form-control textbox" id="" placeholder="Option C" required>
-  </div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Option D </label>
-    <input type="text" name="option_d" class="form-control textbox" id="" placeholder="Option D" required>
-  </div>
-  <div class="form-group">
-    <label for="" style="color:#F38094;">Answer : </label><br>
-    A &nbsp<input type="radio" name="answer" value="option_a" id="" required/><br>
-    B &nbsp<input type="radio" name="answer" value="option_b" id="" required/><br>
-    C &nbsp<input type="radio" name="answer" value="option_c" id="" required/><br>
-    D &nbsp<input type="radio" name="answer" value="option_d" id="" required/>
-  </div>
-  <button type="submit" name="addque" class="btn btn-default" >Add Question</button>
-  <button type="reset" class="btn btn-default" >Reset</button>
-</form>
+        <form id="add_question_form" class="form-horizontal" role="form" action="" method="POST">
+          <div class="form-group">
+            <label class="control-label col-md-2" for="questionInput">Enter Question </label>
+            <div class="col-md-8">
+              <textarea rows="5" cols="75" class="form-control" name="question" id="questionInput" placeholder="Question" required autofocus></textarea>
+            </div>
+          </div>
 
-<hr>
-<a href="select.php">Reset Branch &amp Semester</a>
+          <div class="form-group">
+            <label for="" class="control-label col-md-2">Option A </label>
+            <div class="col-md-8">
+              <input type="text" name="option_a" class="form-control textbox" id="" placeholder="Option A" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="" class="control-label col-md-2">Option B </label>
+            <div class="col-md-8">
+              <input type="text" name="option_b" class="form-control textbox" id="" placeholder="Option B" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="" class="control-label col-md-2">Option C </label>
+            <div class="col-md-8">
+              <input type="text" name="option_c" class="form-control textbox" id="" placeholder="Option C" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="" class="control-label col-md-2">Option D </label>
+            <div class="col-md-8">
+              <input type="text" name="option_d" class="form-control textbox" id="" placeholder="Option D" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="">Answer </label>
+            <div class="col-md-8">
+              A &nbsp<input type="radio" name="answer" value="option_a" id="" required/><br>
+              B &nbsp<input type="radio" name="answer" value="option_b" id="" required/><br>
+              C &nbsp<input type="radio" name="answer" value="option_c" id="" required/><br>
+              D &nbsp<input type="radio" name="answer" value="option_d" id="" required/>
+            </div>
+          </div>
+          <div class="col-md-4 col-md-offset-2">
+            <button type="submit" name="addque" class="btn btn-primary" >Add Question</button>
+            <button type="reset" class="btn btn-primary" >Reset</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <a href="select.php">Reset Branch &amp Semester</a>
 
 </body>
 
-    <?php include ('include/footer.php'); ?>
+<?php include ('include/footer.php'); ?>
 
 <html>

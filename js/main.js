@@ -5,8 +5,8 @@ Version:    1.0
 Created:    February 2015
 -------------------------------------------------------------------*/
 
-$(function () {
+/*$(function () {
 	"use strict";
 	$(".btn:not(.btn-link)").ripples();
 	$(".withripple").ripples();
-});
+});*/

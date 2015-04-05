@@ -81,7 +81,6 @@ body {
 .home-container .text-center {
 	font-size: 20px;
 }
-
 .select-form-container {
 	padding: 50px 0px;
 }
@@ -99,6 +98,20 @@ body {
 	padding-bottom: 40px;
 	font-weight: 600px;
 	font-size: 20px;
+}
+.examination-container {
+	min-height: 400px;
+	text-transform: uppercase;
+}
+.examination-container .form-control {
+	margin-bottom: 10px;
+}
+.examination-container .row {
+	margin-top: 20px;
+}
+.examination-container .row h4{
+	line-height: 1.8;
+	margin-bottom: 20px;
 }
 
 /*============================================

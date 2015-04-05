@@ -39,7 +39,7 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 
-				<form class="form-horizontal" action="examination.php" method="POST">
+				<form class="form-horizontal" action="examination_new.php" method="POST">
 					<p class="text-center">Hello Students, <span class="text-danger">Are you ready for the examination ?</span> Let's start here!</p>
 					<input type="hidden" id="sem" value="<?php echo $_SESSION['user_sem']; ?>">
 					<input type="hidden" id="branch" value="<?php echo $_SESSION['user_branch']; ?>">
@@ -47,7 +47,7 @@
 					<div class="form-group">
 						<label for="selectSubject" class="control-label col-md-3">Subject </label>
 						<div class="col-md-5">
-							<select name="subject" class="form-control" id="subject" required>
+							<select name="subject" class="form-control" id="subject" required autofocus>
 								<option value="">-- Select Subject --</option>
 							</select>
 						</div>

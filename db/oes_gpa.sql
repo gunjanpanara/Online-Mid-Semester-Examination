@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 16, 2015 at 02:30 AM
+-- Generation Time: Apr 05, 2015 at 11:39 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.16
 
@@ -41,9 +41,7 @@ CREATE TABLE IF NOT EXISTS `login_examiner_gpa` (
 --
 
 INSERT INTO `login_examiner_gpa` (`id`, `r_id`, `username`, `pswd`) VALUES
-(6, 6, 'kp', 'kp'),
-(7, 7, 'kpl', 'kpl'),
-(8, 8, 'ab', 'ab');
+(6, 6, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -293,9 +291,7 @@ CREATE TABLE IF NOT EXISTS `reg_examiner_gpa` (
 --
 
 INSERT INTO `reg_examiner_gpa` (`id`, `fname`, `lname`, `gender`, `branch`, `email`, `phone`, `cdate`, `mdate`) VALUES
-(6, 'Kinjal', 'patel', 'female', 'Administration, Student Section, Library', 'kinjalpatel@gmail.com', 98470987, '2015-03-15 07:29:35', '2015-03-15 08:35:17'),
-(7, 'kpa', 'kppp', 'female', 'electrical', 'kinjalpatel@gmail.com', 98470, '2015-03-15 08:47:47', NULL),
-(8, 'hh', 'jjj', 'male', 'biomedical', 'abc@gmail.com', 34556, '2015-03-15 08:51:14', NULL);
+(6, 'Kinjal', 'patel', 'female', 'Computer Engineering', 'kinjalpatel@gmail.com', 98470987, '2015-03-15 07:29:35', '2015-04-03 08:04:28');
 
 -- --------------------------------------------------------
 
@@ -328,10 +324,24 @@ CREATE TABLE IF NOT EXISTS `reg_gpa` (
 
 INSERT INTO `reg_gpa` (`id`, `fname`, `lname`, `gender`, `enroll`, `sem`, `branch`, `dob`, `email`, `phone`, `address`, `city`, `pin`, `cdate`, `mdate`) VALUES
 (19, 'Vish', 'Soni', 'female', 7020, 0, 'computer', '1996-10-30', 'vishsoni30@gmail.com', 21, 'Bado Pol', 'AHMEDABAD', 380001, '2015-03-07 08:29:12', NULL),
-(20, 'sagar', 'jasani', 'male', 1212, 4, 'Computer Engineering', '2015-03-20', 'sagarjasani@gmail.com', 2147483647, 'maninagar', 'JUNAGADH', 362001, '2015-03-07 06:18:35', '2015-03-15 05:52:01'),
+(20, 'sagar', 'jasani', 'male', 1212, 4, 'computer', '2015-03-20', 'sagarjasani@gmail.com', 2147483647, 'maninagar', 'JUNAGADH', 362001, '2015-03-07 06:18:35', '2015-03-17 11:05:06'),
 (21, 'Gunjan', 'panara', 'male', 123, 0, 'automobile', '0010-10-10', 'panaragunjan@gmail.com', 4646, 'BOPAL-58\r\nINDUCTOTHERM', 'AHMEDABAD', 565, '2015-03-08 05:18:20', NULL),
 (22, 'Vijay', 'kjl', 'male', 123123, 0, 'automobile', '0122-10-10', 'abc@gmail.com', 236, '23213,LJKJKLJMKL', 'MKLML', 1254, '2015-03-08 05:22:04', NULL),
 (23, 'hello', 'ABD', 'female', 4151, 0, 'automobile', '0010-10-10', 'vishsoni30@gmail.com', 465456, 'NJKFNKJ', 'NJKN', 5465, '2015-03-08 05:27:14', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `result_gpa`
+--
+
+CREATE TABLE IF NOT EXISTS `result_gpa` (
+  `result_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(255) NOT NULL,
+  `obtain_marks` int(3) NOT NULL,
+  `total_marks` int(3) NOT NULL,
+  PRIMARY KEY (`result_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Result Table for Examination' AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

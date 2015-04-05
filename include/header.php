@@ -6,21 +6,33 @@
 			</div>
 			<div class="col-md-8">
 				<ul class="nav nav-pills pull-right main-nav" role="tablist">
-					<?php if(isset($_SESSION['user_id'])){ ?>
+					<?php if(isset($_SESSION['user_id'])){
+					if(!isset($_SESSION['qa'])){ ?>
+ ?>
 					<li><a href="home.php"><i class="fa fa-home fa-fw"></i> Home</a></li>
-					<?php } else { ?>
+					<?php }} else { ?>
 					<li><a href="index.php"><i class="fa fa-home fa-fw"></i> Home</a></li>
-					<?php } ?>
-					<?php if(isset($_SESSION['user_id'])){ ?>
+					
+					<?php }
+					if(isset($_SESSION['user_id']) ){ 
+					
+					if(isset($_SESSION['qa'])){ ?>
+					<li><a href="result_count.php"> <i class="fa fa-user fa-fw"></i> End-Exam</a></li>
+					<li><a href="logout.php"> <i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+
+					<?php }
+					else{ ?>
 					<li><a href="edit.php"><i class="fa fa-edit fa-fw"></i> Update Profile</a></li>
 					<li><a href="result.php"><i class="fa fa-table fa-fw"></i> Result</a></li>
 					<li><a href="start_examination.php"><i class="fa fa-table fa-fw"></i> Start Examination</a></li>
 					<li><a href="logout.php"> <i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
-					<?php } else { ?>
+					<?php } }
+					else { ?>
 					<li><a href="studystore.php"><i class="fa fa-file-archive-o fa-fw"></i> Study Store</a></li>
 					<li><a href="register.php"><i class="fa fa-user fa-fw"></i> Register</a></li>
 					<li><a href="login.php"><i class="fa fa-sign-in fa-fw"></i> Login</a></li>
-					<?php } ?>
+					<?php }?> 
+					
 				</ul>
 			</div>
 		</div>

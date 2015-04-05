@@ -56,7 +56,7 @@ if(isset($_REQUEST['submit']))
 
 		$res=executeQuery($q);
 		$r_id = mysql_insert_id();
-//$q1 = "insert into login_gpa(r_id, user, pswd) values ('$r_id', '$enroll',ENCODE('".htmlspecialchars($_REQUEST['pswd'],ENT_QUOTES)."','oespass') )";
+		//$q1 = "insert into login_gpa(r_id, user, pswd) values ('$r_id', '$enroll',ENCODE('".htmlspecialchars($_REQUEST['pswd'],ENT_QUOTES)."','oespass') )";
 		$q1 = "insert into login_gpa(r_id, user, pswd) values ('$r_id', '$enroll','$pswd' )";
 
 
@@ -67,7 +67,7 @@ if(isset($_REQUEST['submit']))
 		{
 			$success=true;
 			$_GLOBALS['message']="Your Account is Created Successfully. Click <a href=\"login.php\">here</a> to Login";
-// header('Location: index.php');
+		// header('Location: index.php');
 
 		}
 	}
