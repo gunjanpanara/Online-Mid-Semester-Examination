@@ -1,5 +1,5 @@
 <?php
-include ('check_user_session.php');
+include_once 'check_user_session.php';
 error_reporting(0);
 include_once 'oesdb.php';
 $id=$_SESSION['user_id'];
@@ -141,14 +141,14 @@ if(isset($_POST['update']))
             <label for="selectSemester" class="control-label col-md-3">Semester </label>
             <div class="col-md-5">
               <select name="sem" value="<?php echo $row_fetch_register['sem']; ?>" class="form-control" id="selectSemester" required>
-                <option <?php if($row_fetch_register['sem'] == '1') { echo 'selected="selected"'; } ?>>1</option>
-                <option <?php if($row_fetch_register['sem'] == '2') { echo 'selected="selected"'; } ?>>2</option>
-                <option <?php if($row_fetch_register['sem'] == '3') { echo 'selected="selected"'; } ?>>3</option>
-                <option <?php if($row_fetch_register['sem'] == '4') { echo 'selected="selected"'; } ?>>4</option>
-                <option <?php if($row_fetch_register['sem'] == '5') { echo 'selected="selected"'; } ?>>5</option>
-                <option <?php if($row_fetch_register['sem'] == '6') { echo 'selected="selected"'; } ?>>6</option>
-                <option <?php if($row_fetch_register['sem'] == '7') { echo 'selected="selected"'; } ?>>7</option>
-                <option <?php if($row_fetch_register['sem'] == '8') { echo 'selected="selected"'; } ?>>8</option>
+                <option <?php if($row_fetch_register['sem'] == 1) { echo 'selected="selected"'; } ?>>1</option>
+                <option <?php if($row_fetch_register['sem'] == 2) { echo 'selected="selected"'; } ?>>2</option>
+                <option <?php if($row_fetch_register['sem'] == 3) { echo 'selected="selected"'; } ?>>3</option>
+                <option <?php if($row_fetch_register['sem'] == 4) { echo 'selected="selected"'; } ?>>4</option>
+                <option <?php if($row_fetch_register['sem'] == 5) { echo 'selected="selected"'; } ?>>5</option>
+                <option <?php if($row_fetch_register['sem'] == 6) { echo 'selected="selected"'; } ?>>6</option>
+                <option <?php if($row_fetch_register['sem'] == 7) { echo 'selected="selected"'; } ?>>7</option>
+                <option <?php if($row_fetch_register['sem'] == 8) { echo 'selected="selected"'; } ?>>8</option>
               </select>
             </div>
           </div>

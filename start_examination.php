@@ -47,7 +47,7 @@
 					<div class="form-group">
 						<label for="selectSubject" class="control-label col-md-3">Subject </label>
 						<div class="col-md-5">
-							<select name="subject" class="form-control" id="selectSubject" required>
+							<select name="subject" class="form-control" id="subject" required>
 								<option value="">-- Select Subject --</option>
 							</select>
 						</div>

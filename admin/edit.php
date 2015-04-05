@@ -6,7 +6,7 @@ $id=$_SESSION['examiner_id'];
 
 
 $q_fetch_register = "select * from reg_examiner_gpa where id=$id";
-$q_fetch_login = "select * from login_examiner_gpa where id=$id";
+$q_fetch_login = "select * from login_examiner_gpa where r_id=$id";
 
 $res_fetch_register = executeQuery($q_fetch_register);
 $res_fetch_login = executeQuery($q_fetch_login);

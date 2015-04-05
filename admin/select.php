@@ -88,9 +88,9 @@ function clearText(field)
 				<form class="form-horizontal" action="select.php" method="post">
 					
 					<div class="form-group">
-						<label for="branchSelect" class="control-label col-md-3">Branch </label>
+						<label for="branch" class="control-label col-md-3">Branch </label>
 						<div class="col-md-5">
-							<select name="branch" class="form-control" id="branchSelect" required autofocus>
+							<select name="branch" class="form-control" id="branch" required autofocus>
 								<option value="">--Select Branch--</option>
 								<option value="automobile">AUTO MOBILE ENGINEERING</option>
 								<option value="biomedical">BIO MEDICAL ENGINEERING</option>
@@ -107,9 +107,9 @@ function clearText(field)
 					</div>
 
 					<div class="form-group">
-						<label for="selectSemester" class="control-label col-md-3">Semester </label>
+						<label for="sem" class="control-label col-md-3">Semester </label>
 						<div class="col-md-3">
-							<select name="sem" class="form-control col-md-5" id="selectSemester" required>
+							<select name="sem" class="form-control col-md-5" id="sem" required>
 								<option value="">---</option>
 								<option>1</option>
 								<option>2</option>
@@ -126,7 +126,7 @@ function clearText(field)
 					<div class="form-group">
 						<label class="control-label col-md-3">Subject </label>
 						<div class="col-md-5">
-							<select name="subject" class="form-control" required>
+							<select name="subject" class="form-control" id="subject" required>
 								<option value="">--Select Subject--</option>
 							</select>
 						</div>

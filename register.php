@@ -39,9 +39,9 @@ if(isset($_REQUEST['submit']))
 	$cdate = date('Y-m-d h:i:s');
 	$mdate = date('Y-m-d h:i:s');
 
-	$result=executeQuery("select * from reg_gpa where fname='$fname' and lname='$lname';");
+	$result=executeQuery("select * from reg_gpa where fname='$fname' and lname='$lname'");
 // $_GLOBALS['message']=$newstd;
-	if(empty($_REQUEST['fname'])||empty ($_REQUEST['lname'])||empty ($_REQUEST['gender'])||empty($_REQUEST['enroll'])||empty($_REQUEST['pswd'])||empty($_REQUEST['pswd_again'])||empty($_REQUEST['branch'])||empty($_REQUEST['date'])||empty($_REQUEST['sem'])||empty($_REQUEST['email'])||empty($_REQUEST['phone']))
+	if(empty($_REQUEST['fname'])||empty ($_REQUEST['lname'])||empty ($_REQUEST['gender'])||empty($_REQUEST['enroll'])||empty($_REQUEST['pswd'])||empty($_REQUEST['pswd_again'])||empty($_REQUEST['branch'])||empty($_REQUEST['dob'])||empty($_REQUEST['sem'])||empty($_REQUEST['email'])||empty($_REQUEST['phone']))
 	{
 		$_GLOBALS['message']="Fields marked with an asterisk sign are required";
 	}else if(mysql_num_rows($result)>0)
@@ -51,8 +51,8 @@ if(isset($_REQUEST['submit']))
 	else
 	{
 
-		$q = "insert into reg_gpa(fname,lname,gender,enroll,branch,dob,email,phone,address,city,pin,cdate)
-		values ('$fname','$lname','$gender',$enroll,'$branch','$dob','$email',$phone,'$address','$city',$pin,'$cdate')";
+		$q = "insert into reg_gpa(fname,lname,gender,enroll,branch,sem,dob,email,phone,address,city,pin,cdate)
+		values ('$fname','$lname','$gender',$enroll,'$branch',$sem,'$dob','$email',$phone,'$address','$city',$pin,'$cdate')";
 
 		$res=executeQuery($q);
 		$r_id = mysql_insert_id();
@@ -141,7 +141,7 @@ if(isset($_REQUEST['submit']))
 					<div class="form-group">
 						<label for="passwordConfirm" class="control-label col-md-3">Confirm Password* </label>
 						<div class="col-md-5">
-							<input type="password" name="pswd" class="form-control" id="passwordConfirm" placeholder="Confirm Password" required/>
+							<input type="password" name="pswd_again" class="form-control" id="passwordConfirm" placeholder="Confirm Password" required/>
 						</div>
 					</div>
 

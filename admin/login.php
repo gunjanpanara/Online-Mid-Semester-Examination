@@ -26,7 +26,7 @@ if(isset($_POST['login']))
   if($num>0)
   {
   	session_start();
-  	$_SESSION['examiner_id']=$row['id'];
+  	$_SESSION['examiner_id']=$row['r_id'];
   	$_SESSION['examiner_name']=$row['username'];
     $_SESSION['examiner_branch']=$row2['branch'];
     unset($_GLOBALS['message']);
