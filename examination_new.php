@@ -136,8 +136,6 @@ if(!isset($_SESSION['current_que']) || empty($_SESSION['current_que'])){
           <?php if($_SESSION['current_que'] != 30){ ?>
             <button type="" id="next_button" onclick="getNextQue(); return false;" class="btn btn-primary">Next</button>
           <?php } ?>
-
-          <a class="btn btn-danger" href="result_count.php">End-Exam</a>
         </div>
 
         <!-- </form> -->
