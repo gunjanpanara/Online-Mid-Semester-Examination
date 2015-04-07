@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 05, 2015 at 11:39 AM
+-- Generation Time: Apr 07, 2015 at 03:33 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.16
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `login_examiner_gpa` (
   `username` varchar(20) NOT NULL,
   `pswd` varchar(24) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Login Table for Examiner' AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Login Table for Examiner' AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `login_examiner_gpa`
@@ -55,16 +55,15 @@ CREATE TABLE IF NOT EXISTS `login_gpa` (
   `user` varchar(20) NOT NULL,
   `pswd` varchar(24) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
 
 --
 -- Dumping data for table `login_gpa`
 --
 
 INSERT INTO `login_gpa` (`id`, `r_id`, `user`, `pswd`) VALUES
-(19, 19, '7020', 'abcd'),
-(20, 20, '1212', '1212'),
-(23, 23, '4151', '123');
+(26, 26, '1212', '1212'),
+(27, 27, '123', '123');
 
 -- --------------------------------------------------------
 
@@ -284,7 +283,7 @@ CREATE TABLE IF NOT EXISTS `reg_examiner_gpa` (
   `cdate` datetime NOT NULL,
   `mdate` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Registration Table for Examiner' AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Registration Table for Examiner' AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `reg_examiner_gpa`
@@ -316,18 +315,15 @@ CREATE TABLE IF NOT EXISTS `reg_gpa` (
   `cdate` datetime NOT NULL,
   `mdate` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Registration Table of OES_GPA' AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Registration Table of OES_GPA' AUTO_INCREMENT=28 ;
 
 --
 -- Dumping data for table `reg_gpa`
 --
 
 INSERT INTO `reg_gpa` (`id`, `fname`, `lname`, `gender`, `enroll`, `sem`, `branch`, `dob`, `email`, `phone`, `address`, `city`, `pin`, `cdate`, `mdate`) VALUES
-(19, 'Vish', 'Soni', 'female', 7020, 0, 'computer', '1996-10-30', 'vishsoni30@gmail.com', 21, 'Bado Pol', 'AHMEDABAD', 380001, '2015-03-07 08:29:12', NULL),
-(20, 'sagar', 'jasani', 'male', 1212, 4, 'computer', '2015-03-20', 'sagarjasani@gmail.com', 2147483647, 'maninagar', 'JUNAGADH', 362001, '2015-03-07 06:18:35', '2015-03-17 11:05:06'),
-(21, 'Gunjan', 'panara', 'male', 123, 0, 'automobile', '0010-10-10', 'panaragunjan@gmail.com', 4646, 'BOPAL-58\r\nINDUCTOTHERM', 'AHMEDABAD', 565, '2015-03-08 05:18:20', NULL),
-(22, 'Vijay', 'kjl', 'male', 123123, 0, 'automobile', '0122-10-10', 'abc@gmail.com', 236, '23213,LJKJKLJMKL', 'MKLML', 1254, '2015-03-08 05:22:04', NULL),
-(23, 'hello', 'ABD', 'female', 4151, 0, 'automobile', '0010-10-10', 'vishsoni30@gmail.com', 465456, 'NJKFNKJ', 'NJKN', 5465, '2015-03-08 05:27:14', NULL);
+(26, 'Sagar', 'Jasani', 'male', 1212, 4, 'Computer Engineering', '2015-03-15', 'sagarjasani@gmail.com', 2147483647, 'Bapunagar', 'Ahmedabad', 3800001, '2015-04-06 12:30:06', '2015-04-06 12:47:37'),
+(27, 'Manan', 'Patel', 'male', 123, 6, 'it', '2015-04-15', 'mananpatel@gmail.com', 2147483647, 'Janakpuri', 'Junagadh', 362001, '2015-04-06 12:32:14', NULL);
 
 -- --------------------------------------------------------
 
