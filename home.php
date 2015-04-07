@@ -14,7 +14,7 @@ $arr = mysql_fetch_assoc($res);
 
 <body>
 
-<?php include ('include/header.php');
+    <?php include ('include/header.php');
 
     if($_GLOBALS['message']) 
     {
@@ -29,36 +29,41 @@ $arr = mysql_fetch_assoc($res);
 
     $row_fetch_register = mysql_fetch_assoc($res_fetch_register);
     $row_fetch_login = mysql_fetch_assoc($res_fetch_login);
-?>
+    ?>
 
-        <div class="container home-container">
-            <div class="row">
-              <?php if(isset($_GET['edit']) && isset($_GET['edit'])=='yes')
-              {?>
-              <p class="text-center text-success">Profile updated successfully</p>
-              <?php } ?>
+    <div class="container home-container">
+        <div class="row">
+          <?php if(isset($_GET['edit']) && isset($_GET['edit'])=='yes')
+          {?>
+          <p class="text-center col-md-8 col-md-offset-2 alert alert-success">Profile Updated Successfully</p>
+          <?php } ?>
 
-              <div class="col-md-8 col-md-offset-2">
-                <div class="card personal-details">
-                  <h3 class="card-title text-center"><?php echo "Welcome, ".$arr['fname']." ".$arr['lname']; ?></h3>
-                  <a href="edit.php" class="">
-                    <span class="lbl">Username</span> <span class="data"><?php echo $arr['fname']." ".$arr['lname']; ?></span>
-                </a>
-                <a href="edit.php" class="">
-                    <span class="lbl">Gender</span> <span class="data"><?php echo $arr['gender']; ?></span>
-                </a>
-                <a href="edit.php" class="">
-                    <span class="lbl">Branch</span> <span class="data"><?php echo $arr['branch']; ?></span>
-                </a>
-                <a href="edit.php" class="">
-                    <span class="lbl">Semester</span> <span class="data"><?php echo $arr['sem']; ?></span>
-                </a>
-                <a href="edit.php" class="">
-                    <span class="lbl">E-Mail</span> <span class="data email-display"><?php echo $arr['email']; ?></span>
-                </a>
-            </div>
+          <div class="col-md-8 col-md-offset-2">
+
+          <!-- put dashboard, option-navigation -->
+            <h4 class=""><a href="edit.php" class="btn-primary">Update Profile</a></h4>
+            <h4 class=""><a href="result.php" class="btn-primary">Examination Results</a></h4>
+          
+            <div class="card personal-details">                  
+              <h3 class="card-title text-center"><?php echo "Welcome, ".$arr['fname']." ".$arr['lname']; ?></h3>
+              <a href="edit.php" class="">
+                <span class="lbl">Username</span> <span class="data"><?php echo $arr['fname']." ".$arr['lname']; ?></span>
+            </a>
+            <a href="edit.php" class="">
+                <span class="lbl">Gender</span> <span class="data"><?php echo $arr['gender']; ?></span>
+            </a>
+            <a href="edit.php" class="">
+                <span class="lbl">Branch</span> <span class="data branch-display"><?php echo $arr['branch']; ?></span>
+            </a>
+            <a href="edit.php" class="">
+                <span class="lbl">Semester</span> <span class="data"><?php echo $arr['sem']; ?></span>
+            </a>
+            <a href="edit.php" class="">
+                <span class="lbl">E-Mail</span> <span class="data email-display"><?php echo $arr['email']; ?></span>
+            </a>
         </div>
     </div>
+</div>
 </div>
 
 <?php include ('include/footer.php'); ?>

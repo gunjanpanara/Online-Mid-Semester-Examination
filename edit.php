@@ -72,7 +72,7 @@ if(isset($_POST['update']))
     <div class="col-md-8 col-md-offset-2">
         <h3 class="text-center">Update User Profile</h3>
 
-        <form id="edit_form" class="form-horizontal" role="form" action="edit_form" method="POST">
+        <form id="edit_form" class="form-horizontal" role="form" action="" method="POST">
           <div class="form-group">
             <label for="name" class="control-label col-md-3">Name </label>
             <div class="col-md-3">
@@ -85,14 +85,16 @@ if(isset($_POST['update']))
 
           <div class="form-group">
             <label class="control-label col-md-3">Gender </label>
-            <div class="radio-inline">
+            <div class="radio radio-inline">
               <label>
-                <input type="radio" name="gender" <?php if($row_fetch_register['gender']=='male') { echo 'checked'; } ?> value='male' required/>Male
+                <input type="radio" name="gender" <?php if($row_fetch_register['gender']=='male') { echo 'checked'; } ?> value='male' required>
+                <span class="label-text">Male</span> 
               </label>
             </div>
-            <div class="radio-inline">
+            <div class="radio radio-inline">
               <label>
-                <input type="radio" name="gender" <?php if($row_fetch_register['gender']=='female') { echo 'checked'; } ?> value='female' required/>Female
+                <input type="radio" name="gender" <?php if($row_fetch_register['gender']=='female') { echo 'checked'; } ?> value='female' required>
+                <span class="label-text">Male</span> 
               </label>
             </div>
           </div>

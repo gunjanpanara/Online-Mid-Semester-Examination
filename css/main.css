@@ -51,16 +51,23 @@ body {
 
 /*-----------------Form-----------------*/
 .reg-container {
-	padding: 40px 0;
+	padding: 30px 0;
 }
-.reg-container .form-group .radio-inline{
-	margin-left: 15px;
+.reg-container .form-group .radio{
+	margin-left: -25px;
 }
 .reg-container h3 {
 	margin-bottom: 40px;
 }
-.edit-container .form-group .radio-inline{
-	margin-left: 15px;
+
+.edit-container {
+	padding: 30px 0;
+}
+.edit-container .form-group .radio{
+	margin-left: -25px;
+}
+.edit-container h3 {
+	margin-bottom: 40px;
 }
 
 .login-container {
@@ -100,7 +107,8 @@ body {
 	font-size: 20px;
 }
 .examination-container {
-	min-height: 400px;
+	padding-top: 40px;
+	min-height: 430px;
 	text-transform: uppercase;
 }
 .examination-container .form-control {
@@ -112,6 +120,136 @@ body {
 .examination-container .row h4{
 	line-height: 1.8;
 	margin-bottom: 20px;
+}
+.examination-container .btn i.fa {
+	vertical-align: 1px;
+	width: 2em;
+}
+
+/*-----Custom Radio and Check Box-----*/
+input[type="checkbox"] {
+	display: none;
+}
+input[type="checkbox"]+.label-text {
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	user-select:none;
+}
+input[type="checkbox"]+.label-text:before {
+	content: "\f096";
+	vertical-align: -2px;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-size: 1.3em;
+	margin-right: 5px;
+}
+input[type="checkbox"]:checked+.label-text:before {
+	content: "\f14a";
+	color: #2196F3;
+	vertical-align: -2px;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-size: 1.3em;
+	margin-right: 5px;
+	-webkit-animation-name: Check;
+	animation-name: check;
+	-webkit-animation-duration: 0.18s;
+	animation-duration: 0.18s;
+	animation-timing-function: ease-in;
+}
+input[type="checkbox"]:disabled+.label-text {
+	cursor: not-allowed;
+}
+input[type="checkbox"]:disabled+.label-text:before {
+	content: "\f0c8";
+	color: #ccc;
+	vertical-align: -2px;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-size: 1.3em;
+	margin-right: 5px;
+}
+input[type="radio"] {
+	display: none;
+}
+input[type="radio"]+.label-text {
+	-webkit-user-select:none;
+	user-select:none;
+}
+input[type="radio"]+.label-text:before {
+	content: "\f10c";
+	vertical-align: -2px;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-size: 1.3em;
+	margin-right: 5px;
+}
+input[type="radio"]:checked+.label-text:before {
+	content: "\f192";
+	color: #2196F3;
+	vertical-align: -2px;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-size: 1.3em;
+	margin-right: 5px;
+	-webkit-animation-name: Check;
+	-moz-animation-name: check;
+	animation-name: check;
+	-webkit-animation-duration: 0.18s;
+	-moz-animation-duration: 0.18s;
+	animation-duration: 0.18s;
+	animation-timing-function: ease-in;
+}
+input[type="radio"]:disabled+.label-text {
+	cursor: not-allowed;
+}
+input[type="radio"]:disabled+.label-text:before {
+	content: "\f111";
+	color: #ccc;
+	vertical-align: -2px;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-size: 1.3em;
+	margin-right: 5px;
+}
+@-webkit-keyframes Check {
+	0% {
+		-webkit-transform: scale(0);
+	}
+	90% {
+		-webkit-transform: scale(1.4);
+	}
+	100% {
+		-webkit-transform: scale(1);
+	}
+}
+@-moz-keyframes Check {
+	0% {
+		-moz-transform: scale(0);
+	}
+	90% {
+		-moz-transform: scale(1.4);
+	}
+	100% {
+		-moz-transform: scale(1);
+	}
+}
+@keyframes Check {
+	0% {
+		transform: scale(0);
+	}
+	90% {
+		transform: scale(1.4);
+	}
+	100% {
+		transform: scale(1);
+	}
 }
 
 /*============================================
@@ -133,7 +271,7 @@ body {
 	border-bottom: 1px solid #e5e5e5;
 }
 .personal-details h3.card-title {
-	padding: 40px 20px 0;
+	padding: 20px 20px 0;
 	text-transform: uppercase;
 }
 .home-container .personal-details a {
@@ -156,6 +294,9 @@ body {
 }
 .personal-details a span.email-display {
 	text-transform: lowercase;
+}
+.personal-details a span.branch-display {
+	text-transform: uppercase;
 }
 .home-container .personal-details a:hover {
 	background-color: rgba(0,0,0,0.03);

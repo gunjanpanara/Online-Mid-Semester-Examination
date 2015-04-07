@@ -55,7 +55,7 @@ if(isset($_POST['login']))
         <?php
 
         if($_GLOBALS['message']) {
-          echo "<div class=\"message\">".$_GLOBALS['message']."</div>";
+          echo "<div class=\"alert alert-danger message\" >".$_GLOBALS['message']."</div>";
         }
         ?>
         <h3 class="text-center">LOGIN</h3>

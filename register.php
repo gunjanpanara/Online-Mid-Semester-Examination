@@ -61,15 +61,7 @@ if(isset($_REQUEST['submit']))
 
 
 		$res1=executeQuery($q1);
-		if(!@$res||!@$res1)
-			$_GLOBALS['message']=mysql_error();
-		else
-		{
-			$success=true;
-			$_GLOBALS['message']="Your Account is Created Successfully. Click <a href=\"login.php\">here</a> to Login";
-		// header('Location: index.php');
-
-		}
+		
 	}
 	closedb();
 }
@@ -93,6 +85,13 @@ if(isset($_REQUEST['submit']))
 				if($_GLOBALS['message']) {
 					echo "<div class=\"message\">".$_GLOBALS['message']."</div>";
 				}
+				if(!@$res||!@$res1)
+			$_GLOBALS['message']=mysql_error();
+		else
+		{
+			$success=true;
+			?><div class="alert alert-success" role="alert">Registartion Successful.</div><?php
+		}
 				?>
 
 				<form id="reg_form" class="form-horizontal" role="form" action="register.php" method="POST">
@@ -109,16 +108,16 @@ if(isset($_REQUEST['submit']))
 
 					<div class="form-group">
 						<label class="control-label col-md-3">Gender* </label>
-						<div class="radio-inline">
+						<div class="radio radio-inline">
 							<label>
-								<input type="radio" name="gender" value="male" checked>
-								Male 
+								<input type="radio" name="gender" value="male" required>
+								<span class="label-text">Male</span> 
 							</label>
 						</div>
-						<div class="radio-inline">
+						<div class="radio radio-inline">
 							<label>
-								<input type="radio" name="gender" value="female">
-								Female
+								<input type="radio" name="gender" value="female" required>
+								<span class="label-text">Female</span>
 							</label>
 						</div>
 					</div>
