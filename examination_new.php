@@ -22,7 +22,7 @@ foreach ($_SESSION as $key => $value) {
 //unset($_SESSION['qa']);
 
 if(!isset($_SESSION['qa']) || empty($_SESSION['qa'])){
-	$q = "select * from question_gpa where subject = '".$subject."' and branch = '".$user_branch."' and sem = '".$user_sem."' limit 30";
+	$q = "select * from question_gpa where subject = '".$subject."' and branch = '".$user_branch."' and sem = '".$user_sem."' order by RAND() limit 30";
 	$res = executeQuery($q);
 	$_SESSION['qa'] = array();
 	$count = 1;
