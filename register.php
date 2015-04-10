@@ -17,6 +17,7 @@ Step 2: Display the HTML page to receive the required information.
 error_reporting(0);
 session_start();
 include_once 'oesdb.php';
+include 'include/general.php';
 
 if(isset($_REQUEST['submit']))
 {
@@ -28,6 +29,7 @@ if(isset($_REQUEST['submit']))
 	$gender=$_POST['gender'];
 	$enroll=$_POST['enroll'];
 	$pswd=$_POST['pswd'];
+	$pswd_again=$_POST['pswd_again'];
 	$branch=$_POST['branch'];
 	$sem=$_POST['sem'];
 	$dob=$_POST['dob'];
@@ -38,8 +40,7 @@ if(isset($_REQUEST['submit']))
 	$pin=$_POST['pin'];
 	$cdate = date('Y-m-d h:i:s');
 	$mdate = date('Y-m-d h:i:s');
-
-	$result=executeQuery("select * from reg_gpa where fname='$fname' and lname='$lname'");
+	$result=executeQuery("select * from reg_gpa where enroll=$enroll");
 // $_GLOBALS['message']=$newstd;
 	if(empty($_REQUEST['fname'])||empty ($_REQUEST['lname'])||empty ($_REQUEST['gender'])||empty($_REQUEST['enroll'])||empty($_REQUEST['pswd'])||empty($_REQUEST['pswd_again'])||empty($_REQUEST['branch'])||empty($_REQUEST['dob'])||empty($_REQUEST['sem'])||empty($_REQUEST['email'])||empty($_REQUEST['phone']))
 	{
@@ -48,6 +49,14 @@ if(isset($_REQUEST['submit']))
 	{
 		$_GLOBALS['message']="Sorry the Enrollment Number you entered is not available. Try with some other name.";
 	}
+	else if ($pswd!=$pswd_again) {
+		# code...
+		$_GLOBALS['message']="Sorry the passwords do not match.";
+
+	}
+	else if(email_exists($email))
+		$_GLOBALS['message']="Sorry the mail address is already been taken.";
+
 	else
 	{
 
@@ -151,7 +160,7 @@ if(isset($_REQUEST['submit']))
 								<option value="">- - Select Branch - -</option>
 								<option value="automobile">AUTO MOBILE ENGINEERING</option>
 								<option value="biomedical">BIO MEDICAL ENGINEERING</option>
-								<option value="biomedical">CIVIL ENGINEERING</option>
+								<option value="civil">CIVIL ENGINEERING</option>
 								<option value="computer">COMPUTER ENGINEERING</option>
 								<option value="electrical">ELECTRICAL ENGINEERING</option>
 								<option value="ec">ELECTRONICS &amp; COMMUNICATION ENGINEERING</option>

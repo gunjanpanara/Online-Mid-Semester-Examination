@@ -2,6 +2,7 @@
 
 error_reporting(0);
 session_start();
+include 'include/general.php';
 include_once 'oesdb.php';
 
 if(isset($_POST['login']))
@@ -9,6 +10,8 @@ if(isset($_POST['login']))
 
   $uname=$_POST['uname'];
   $pswd=$_POST['pswd'];
+$uname=sanitize($uname);
+$pswd=sanitize($pswd);
 
   $q="select * from login_gpa where user='$uname' and pswd='$pswd'";
 
