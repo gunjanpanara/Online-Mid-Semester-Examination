@@ -2,13 +2,13 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<img src="images/logo.png" class="main-logo">	
+				<img src="images/logo.png" class="main-logo" alt="Government Polytechnic Logo Image">	
 			</div>
 			<div class="col-md-8">
 				<ul class="nav nav-pills pull-right main-nav" role="tablist">
 					<?php if(isset($_SESSION['user_id'])){
 					if(!isset($_SESSION['qa'])){ ?>
- ?>
+
 					<li><a href="home.php"><i class="fa fa-home fa-fw"></i> Home</a></li>
 					<?php }} else { ?>
 					<li><a href="index.php"><i class="fa fa-home fa-fw"></i> Home</a></li>
@@ -17,13 +17,11 @@
 					if(isset($_SESSION['user_id']) ){ 
 					
 					if(isset($_SESSION['qa'])){ ?>
-					<li><a href="result_count.php"> <i class="fa fa-user fa-fw"></i> End-Exam</a></li>
+					<li><a href="result_count.php" id="endExamBtn"> <i class="fa fa-user fa-fw"></i> End-Exam</a></li>
 					<li><a href="logout.php"> <i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
 
 					<?php }
 					else{ ?>
-					<li><a href="edit.php"><i class="fa fa-edit fa-fw"></i> Update Profile</a></li>
-					<li><a href="result.php"><i class="fa fa-table fa-fw"></i> Result</a></li>
 					<li><a href="start_examination.php"><i class="fa fa-table fa-fw"></i> Start Examination</a></li>
 					<li><a href="logout.php"> <i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
 					<?php } }

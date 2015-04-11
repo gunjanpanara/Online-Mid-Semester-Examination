@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
 
-    <?php include ('include/head.php');
-    include ('include/connection.php');
-	include ('check_user_session.php');
-     ?>
+<?php include ('include/head.php');
+include ('include/connection.php');
+include ('check_user_session.php');
+?>
 
 <body>
 
     <?php include ('include/header.php'); ?>
 
-	<center>
-	<h3>Examination Result</h3><br>
-	<h4>. . Coming Soon . .</h4>
-	</center>
+    <div class="container result-container">
+    	<div class="row">
+    		<div class="col-md-12">
+				<h3 class="text-center">Examination Results</h3><br>
+				<h4 class="text-center">. . Coming Soon . .</h4>  			
+    		</div>
+    	</div>
+    </div>
 
 </body>
 

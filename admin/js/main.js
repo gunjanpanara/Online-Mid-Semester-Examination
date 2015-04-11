@@ -4,9 +4,5 @@ Author:     Gunjan Panara
 Version:    1.0
 Created:    February 2015
 -------------------------------------------------------------------*/
+$("[data-toggle='tooltip']").tooltip();
 
-$(function () {
-	"use strict";
-	$(".btn:not(.btn-link)").ripples();
-	$(".withripple").ripples();
-});

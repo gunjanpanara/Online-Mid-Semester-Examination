@@ -18,8 +18,7 @@ body {
 	text-rendering: optimizeLegibility;
 }
 .main-header {
-	background-color: #263238;
-	/*background-color: #0D47A1;*/
+	background-color: #37474F;
 	padding: 40px 0;
 	border-bottom: 1px solid #EEE;
 }
@@ -37,9 +36,16 @@ body {
 	height: 70px;
 	width: 320px;
 }
+.footer a {
+  color: #FFF;
+}
+.footer a:hover {
+  color: #BBDEFB;
+}
+
 /*----------------Home Page----------------*/
 .home-container {
-	padding: 40px 0;
+	padding: 60px 0;
 }
 .home-container p.lead {
 	color: #000;
@@ -47,6 +53,16 @@ body {
 }
 .home-container img.banner-img {
 	border-radius: 3px;
+}
+
+/*-------------Study Store Page-------------*/
+.studystore-container{
+	padding: 60px 0;
+}
+
+/*-------------Result Page-------------*/
+.result-container{
+	padding: 60px 0;
 }
 
 /*-----------------Form-----------------*/
@@ -252,9 +268,7 @@ input[type="radio"]:disabled+.label-text:before {
 	}
 }
 
-/*============================================
-			Profile page
-==============================================*/
+/*------------------Profile Page------------------*/
 .home-container {
 	background-color: #f5f5f5;
 }
@@ -274,7 +288,7 @@ input[type="radio"]:disabled+.label-text:before {
 	padding: 20px 20px 0;
 	text-transform: uppercase;
 }
-.home-container .personal-details a {
+.home-container .personal-details>a {
 	padding: 20px 40px;
 	display: block;
 	border-bottom: 1px solid #e5e5e5;
@@ -298,13 +312,54 @@ input[type="radio"]:disabled+.label-text:before {
 .personal-details a span.branch-display {
 	text-transform: uppercase;
 }
-.home-container .personal-details a:hover {
+.home-container .personal-details>a:hover {
 	background-color: rgba(0,0,0,0.03);
+}
+.home-container a.tile {
+	padding: 20px;
+	text-align: center;
+	display: block;
+	border-radius: 3px;
+}
+.home-container a.tile:hover {
+	background-color: rgba(0,0,0,0.04);
+}
+.home-container .tile i.fa {
+	display: block;
 }
 @media (max-width: 768px) {
 	.home-container .card {
 		margin: 10px 0;
 	}
+}
+
+/*----------------Result Display Page----------------*/
+.result-display-container {
+	background-color: #f5f5f5;
+	padding: 40px 0;
+}
+.result-display-container .card {
+	-webkit-box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
+	box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
+	border-radius: 3px;
+	background-color: #FFF;
+	margin: 15px;
+}
+.result-display-container .card h3.card-title {
+	color: #1976D2;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.result-details h3.card-title {
+	padding: 20px 20px 0;
+	text-transform: uppercase;
+}
+.result-display-container .result-data{
+	padding: 20px 40px;
+	font-size: 16px;
+	font-weight: 400;
+	display: block;
+	border-bottom: 1px solid #e5e5e5;
 }
 
 /*----------------Footer----------------*/

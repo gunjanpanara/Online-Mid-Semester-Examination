@@ -7,42 +7,41 @@ include_once 'oesdb.php';
 
 if(isset($_POST['login']))
 {
+    $uname=$_POST['uname'];
+    $pswd=$_POST['pswd'];
+    $uname=sanitize($uname);
+    $pswd=sanitize($pswd);
 
-  $uname=$_POST['uname'];
-  $pswd=$_POST['pswd'];
-$uname=sanitize($uname);
-$pswd=sanitize($pswd);
+    $q="select * from login_gpa where user='$uname' and pswd='$pswd'";
 
-  $q="select * from login_gpa where user='$uname' and pswd='$pswd'";
+    $res=executeQuery($q);
+    $num=mysql_num_rows($res);
+    $row=mysql_fetch_assoc($res);
+    $rid=$row['r_id'];
 
-  //$res=mysql_query($q,$conn);
+    $q2 = "select sem, branch from reg_gpa where id=$rid";
+    $res2=executeQuery($q2);
+    $row2=mysql_fetch_assoc($res2);
 
-  $res=executeQuery($q);
-  $num=mysql_num_rows($res);
-  $row=mysql_fetch_assoc($res);
-  $rid=$row['r_id'];
-
-  $q2 = "select sem, branch from reg_gpa where id=$rid";
-  $res2=executeQuery($q2);
-  $row2=mysql_fetch_assoc($res2);
-
-  if($num>0)
-  {
-  	session_start();
-  	$_SESSION['user_id']=$row['r_id'];
-  	$_SESSION['user_name']=$row['user'];
-    $_SESSION['user_sem']=$row2['sem'];
-    $_SESSION['user_branch']=$row2['branch'];
-    unset($_GLOBALS['message']);
-  	header('location:home.php');
-  } 
+    if($num>0)
+    {
+        session_start();
+      	$_SESSION['user_id']=$row['r_id'];
+      	$_SESSION['user_name']=$row['user'];
+        $_SESSION['user_sem']=$row2['sem'];
+        $_SESSION['user_branch']=$row2['branch'];
+        unset($_GLOBALS['message']);
+      	header('location:home.php');
+    } 
               
-  else {$_GLOBALS['message']="Check your Username and Password.";  }
-
+    else 
+    {
+        $_GLOBALS['message']="Check your Username and Password.";  
+    }
 }
 ?>
 
-<!DOCTYPE html>
+
 <html>
 
     <?php include ('include/head.php'); ?>

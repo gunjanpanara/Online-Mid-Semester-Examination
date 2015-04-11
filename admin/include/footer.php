@@ -1,10 +1,9 @@
 <footer>
-	<p class="text-center">&copy; Alll Rights reserved by Government Polytechnic Ahmedabad</p>
+	<p class="text-center footer">&copy; All Rights Reserved by <a href="index.php">Government Polytechnic, Ahmedabad</a></p>
 </footer>
 
-<!-- JavaScripts
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="js/vendor/jquery-1.11.0.min.js"></script>
-<script src="js/vendor/bootstrap.min.js"></script>
+<!-- JavaScripts -->
+<!-- Placed at the end of the document to load the pages faster -->
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>

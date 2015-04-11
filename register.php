@@ -142,7 +142,7 @@ if(isset($_REQUEST['submit']))
 					<div class="form-group">
 						<label for="passwordText" class="control-label col-md-3">Password* </label>
 						<div class="col-md-5">
-							<input type="password" name="pswd" class="form-control" id="passwordText" placeholder="Password [6-14]" required/>
+							<input type="password" name="pswd" class="form-control" id="passwordText" placeholder="Password" data-toggle="tooltip" data-placement="right" title="password must be between 6-14 character" required/>
 						</div>
 					</div>
 

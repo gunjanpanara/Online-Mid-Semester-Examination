@@ -2,8 +2,8 @@
 include ('check_user_session.php');
 error_reporting(0);
 include_once 'oesdb.php';
-$id=$_SESSION['examiner_id'];
 
+$id=$_SESSION['examiner_id'];
 
 $q_fetch_register = "select * from reg_examiner_gpa where id=$id";
 $q_fetch_login = "select * from login_examiner_gpa where r_id=$id";
@@ -66,7 +66,7 @@ if(isset($_POST['update']))
       <div class="col-md-8 col-md-offset-2">
         <h3 class="text-center">Update User Profile</h3>
 
-        <form id="edit_form" class="form-horizontal" role="form" action="edit_form" method="POST">
+        <form id="edit_form" class="form-horizontal" role="form" action="" method="POST">
 
           <div class="form-group">
             <label for="name" class="control-label col-sm-3">Name </label>
@@ -81,14 +81,16 @@ if(isset($_POST['update']))
           <div class="form-group">
             <label class="control-label col-sm-3">Gender </label>
             <div class="radio-inline">
-              <label>
-                <input type="radio" name="gender" <?php if($row_fetch_register['gender']=='male') { echo 'checked'; } ?> value='male'required/>Male
-              </label>
+                <label>
+                    <input type="radio" name="gender" <?php if($row_fetch_register['gender']=='male') { echo 'checked'; } ?> value='male'required/>
+                    <span class="label-text">Male</span> 
+                </label>
             </div>
             <div class="radio-inline">
-              <label>
-                <input type="radio" name="gender" <?php if($row_fetch_register['gender']=='female') { echo 'checked'; } ?> value='female'required/>Female
-              </label>
+                <label>
+                    <input type="radio" name="gender" <?php if($row_fetch_register['gender']=='female') { echo 'checked'; } ?> value='female'required/>
+                    <span class="label-text">Female</span> 
+                </label>
             </div>
           </div>
 
@@ -117,7 +119,7 @@ if(isset($_POST['update']))
             <label for="selectBranch" class="control-label col-sm-3">Branch </label>
             <div class="col-md-5">
               <select name="branch" class="form-control" value="<?php echo $row_fetch_register['branch']; ?>" id="selectBranch" class="" required>
-                 <option <?php if($row_fetch_register['branch'] == 'automobile') { echo 'selected="selected"'; } ?>>Auto Mobile Engineering</option>
+                <option <?php if($row_fetch_register['branch'] == 'automobile') { echo 'selected="selected"'; } ?>>Auto Mobile Engineering</option>
                 <option <?php if($row_fetch_register['branch'] == 'biomedical') { echo 'selected="selected"'; } ?>>Bio Medical Engineering</option>
                 <option <?php if($row_fetch_register['branch'] == 'civil') { echo 'selected="selected"'; } ?>>Civil Engineering</option>
                 <option <?php if($row_fetch_register['branch'] == 'computer') { echo 'selected="selected"'; } ?>>Computer Engineering</option>

@@ -8,10 +8,14 @@
 
     <?php include ('include/header.php'); ?>
 
-	<center>
-	<h3>Download Examination Material</h3><br>
-	<h4>. . Coming Soon . .</h4>
-	</center>
+    <div class="container studystore-container">
+    	<div class="row">
+    		<div class="col-md-12">
+				<h3 class="text-center">Download Examination Material</h3><br>
+				<h4 class="text-center">. . Coming Soon . .</h4>  			
+    		</div>
+    	</div>
+    </div>
 
 </body>
 
