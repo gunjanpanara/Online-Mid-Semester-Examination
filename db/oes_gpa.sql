@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 07, 2015 at 03:33 PM
+-- Generation Time: Apr 12, 2015 at 05:23 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.16
 
@@ -55,15 +55,15 @@ CREATE TABLE IF NOT EXISTS `login_gpa` (
   `user` varchar(20) NOT NULL,
   `pswd` varchar(24) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
 -- Dumping data for table `login_gpa`
 --
 
 INSERT INTO `login_gpa` (`id`, `r_id`, `user`, `pswd`) VALUES
-(26, 26, '1212', '1212'),
-(27, 27, '123', '123');
+(27, 27, '123', '123'),
+(28, 28, '1212', '1212');
 
 -- --------------------------------------------------------
 
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `question_gpa` (
   `option_d` varchar(200) NOT NULL,
   `answer` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=180 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=183 ;
 
 --
 -- Dumping data for table `question_gpa`
@@ -264,7 +264,10 @@ INSERT INTO `question_gpa` (`id`, `branch`, `sem`, `subject`, `question`, `optio
 (176, 'it', 6, 'ANDROID APPS DEVELOPMENT', 'What will be output if you will compile and execute the following c code?\r\nint extern x;\r\nvoid main()\r\nprintf("%d",x);\r\nx=2;\r\ngetch();\r\n}\r\nint x=23;', '0', '2', '23', 'compiler error', 'option_c'),
 (177, 'it', 6, 'ANDROID APPS DEVELOPMENT', 'What will be output if you will compile and execute the following c code?\r\nvoid main()\r\n{\r\nif(printf("cquestionbank"))\r\nprintf("I know c");\r\nelse\r\nprintf("I know c++");\r\n}', 'I know c', 'I know c++', 'cquestionbankI know c', 'cquestionbankI know c++', 'option_c'),
 (178, 'it', 6, 'ANDROID APPS DEVELOPMENT', 'What will be output if you will compile and execute the following c code?\r\nint extern x;\r\nvoid main()\r\nprintf("%d",x);\r\nx=2;\r\ngetch();\r\n}\r\nint x=23;', '0', '2', '23', 'compiler error', 'option_c'),
-(179, 'biomedical', 1, 'ENGLISH', 'quest 1', 'Option 1', 'OPTION 2', 'OPTION 3', 'OPTION 4', 'option_a');
+(179, 'biomedical', 1, 'ENGLISH', 'quest 1', 'Option 1', 'OPTION 2', 'OPTION 3', 'OPTION 4', 'option_a'),
+(180, 'computer', 3, 'OPERATING SYSTEM', 'jhg', 'lkhg', 'lkhg', 'lhg', 'lhg', ''),
+(181, 'computer', 3, 'OPERATING SYSTEM', 'jhg', 'lkhg', 'lkhg', 'lhg', 'lhg', ''),
+(182, 'computer', 3, 'OPERATING SYSTEM', 'lihbj', 'lkjb', 'lkhg', 'kjhv', 'kj ', '');
 
 -- --------------------------------------------------------
 
@@ -290,7 +293,7 @@ CREATE TABLE IF NOT EXISTS `reg_examiner_gpa` (
 --
 
 INSERT INTO `reg_examiner_gpa` (`id`, `fname`, `lname`, `gender`, `branch`, `email`, `phone`, `cdate`, `mdate`) VALUES
-(6, 'Kinjal', 'patel', 'female', 'Computer Engineering', 'kinjalpatel@gmail.com', 98470987, '2015-03-15 07:29:35', '2015-04-03 08:04:28');
+(6, 'Kinjal', 'patel', 'female', 'computer', 'kinjalpatel@gmail.com', 1234567890, '2015-03-15 07:29:35', '2015-04-12 05:28:34');
 
 -- --------------------------------------------------------
 
@@ -315,15 +318,15 @@ CREATE TABLE IF NOT EXISTS `reg_gpa` (
   `cdate` datetime NOT NULL,
   `mdate` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Registration Table of OES_GPA' AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Registration Table of OES_GPA' AUTO_INCREMENT=29 ;
 
 --
 -- Dumping data for table `reg_gpa`
 --
 
 INSERT INTO `reg_gpa` (`id`, `fname`, `lname`, `gender`, `enroll`, `sem`, `branch`, `dob`, `email`, `phone`, `address`, `city`, `pin`, `cdate`, `mdate`) VALUES
-(26, 'Sagar', 'Jasani', 'male', 1212, 4, 'Computer Engineering', '2015-03-15', 'sagarjasani@gmail.com', 2147483647, 'Bapunagar', 'Ahmedabad', 3800001, '2015-04-06 12:30:06', '2015-04-06 12:47:37'),
-(27, 'Manan', 'Patel', 'male', 123, 6, 'it', '2015-04-15', 'mananpatel@gmail.com', 2147483647, 'Janakpuri', 'Junagadh', 362001, '2015-04-06 12:32:14', NULL);
+(27, 'Manan', 'Patel', 'male', 123, 6, 'it', '2015-04-15', 'mananpatel@gmail.com', 2147483647, 'Janakpuri', 'Junagadh', 362001, '2015-04-06 12:32:14', '2015-04-12 05:18:26'),
+(28, 'Sagar', 'Jasani', 'male', 1212, 4, 'computer', '1992-05-02', 'sagarjasani@gmail.com', 21474, 'Bapunagar', 'Ahmedabad', 380006, '2015-04-11 07:56:03', '2015-04-11 10:31:57');
 
 -- --------------------------------------------------------
 
@@ -332,12 +335,26 @@ INSERT INTO `reg_gpa` (`id`, `fname`, `lname`, `gender`, `enroll`, `sem`, `branc
 --
 
 CREATE TABLE IF NOT EXISTS `result_gpa` (
-  `result_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(255) NOT NULL,
-  `obtain_marks` int(3) NOT NULL,
-  `total_marks` int(3) NOT NULL,
-  PRIMARY KEY (`result_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Result Table for Examination' AUTO_INCREMENT=1 ;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(12) NOT NULL,
+  `branch` varchar(40) NOT NULL,
+  `sem` int(2) NOT NULL,
+  `subject` varchar(40) NOT NULL,
+  `attend_que` int(2) NOT NULL,
+  `obtained_marks` int(2) NOT NULL,
+  `exam_date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Examinaiton Result Data Store' AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `result_gpa`
+--
+
+INSERT INTO `result_gpa` (`id`, `user_id`, `branch`, `sem`, `subject`, `attend_que`, `obtained_marks`, `exam_date`) VALUES
+(1, 27, 'it', 6, '', 0, 0, '2015-04-12 08:30:26'),
+(2, 27, 'it', 6, 'ANDROID APPS DEVELOPMENT', 7, 2, '2015-04-12 08:33:45'),
+(3, 27, 'it', 6, 'ANDROID APPS DEVELOPMENT', 26, 8, '2015-04-12 08:41:09'),
+(4, 28, 'computer', 4, 'COMPUTER NETWORKS', 10, 2, '2015-04-12 10:55:43');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
