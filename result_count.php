@@ -9,24 +9,56 @@ include_once 'oesdb.php';
 
 $res = executeQuery("select * from reg_gpa where id=".$_SESSION['user_id']);
 $arr = mysql_fetch_assoc($res);
-
+$count_atten = 0;
+$count=0;
 $total_que = 0;
 $right_ans = 0;
-foreach ($_SESSION['qa'] as $key => $value) {
-	
-	
-	$qid = $value['id'];
-	$q = "select answer from question_gpa where id = ".$qid;
-	$res = executeQuery($q);
-	$res = mysql_fetch_assoc($res);
-	$ans = $res['answer'];
+	while($count<30)
+	{
+		if(isset($_SESSION['qa'][$count]['ans']) && empty($_SESSION['qa'][$count]['ans']) == false)
+		{
+			$count_atten++;
+		}
+		$count++;
+	}
+	foreach ($_SESSION['qa'] as $key => $value) 
+	{	
+		$qid = $value['id'];
+		$q = "select answer from question_gpa where id = ".$qid;
+		$res = executeQuery($q);
+		$res = mysql_fetch_assoc($res);
+		$ans = $res['answer'];
 
-	if($ans == $value['ans']){
-		$right_ans++;
+		if($ans == $value['ans'])
+		{
+			$right_ans++;
+		}
+
+		$total_que++;
 	}
 
-	$total_que++;
+$subject = $_SESSION['subject'];
+$user_id = $_SESSION['user_id'];
+$attend_que = $count_atten;
+$obtained_marks = $right_ans;
+$exam_date = date('Y-m-d h:i:s');
+
+$res_reg = executeQuery("select * from reg_gpa where id=".$_SESSION['user_id']);
+$arr = mysql_fetch_assoc($res_reg);
+
+$branch = $arr['branch'];
+$sem = $arr['sem'];
+
+$q = "insert into result_gpa (user_id,branch,sem,subject,attend_que,obtained_marks,exam_date)
+	values ($user_id,'$branch',$sem,'$subject',$attend_que,$obtained_marks,'$exam_date')";
+$res = executeQuery($q);
+if (!$res) {
+	echo "error inserting result data";
 }
+
+unset($_SESSION['qa']);
+unset($_SESSION['subject']);
+unset($_SESSION['current_que']);
 
 ?>
 
@@ -45,7 +77,7 @@ foreach ($_SESSION['qa'] as $key => $value) {
 					</div>
 					<div class="result-data">
 						<span class="lbl">Subject : </span> 
-						<span class="data"></span>
+						<span class="data"><?php echo "$subject"; ?></span>
 					</div>
 					<div class="result-data">
 						<span class="lbl">Total Questions : </span> 
@@ -53,7 +85,7 @@ foreach ($_SESSION['qa'] as $key => $value) {
 					</div>
 					<div class="result-data">
 						<span class="lbl">Attended Questions : </span> 
-						<span class="data"></span>
+						<span class="data"><?php echo "$count_atten"; ?></span>
 					</div>
 					<div class="result-data">
 						<span class="lbl">Right Answers : </span> 

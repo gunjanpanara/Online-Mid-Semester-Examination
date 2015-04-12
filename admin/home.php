@@ -35,7 +35,7 @@ $row_fetch_login = mysql_fetch_assoc($res_fetch_login);
     <div class="row">
       <?php if(isset($_GET['edit']) && isset($_GET['edit'])=='yes')
       {?>
-      <p class="text-center text-success">Profile updated successfully</p>
+      <p class="text-center col-md-8 col-md-offset-2 alert alert-success">Profile Updated Successfully</p>
       <?php } ?>
 
       <div class="col-md-8 col-md-offset-2">

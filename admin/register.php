@@ -73,7 +73,7 @@ if(isset($_REQUEST['submit']))
     }
     else
     {
-        $_GLOBALS['message'] = 'Passwords do not match.';
+        $_GLOBALS['message'] = 'Passwords Do Not Match.';
     }
     closedb();
 }
@@ -95,7 +95,7 @@ if(isset($_REQUEST['submit']))
                 <h3 class="text-center">Examiner Registration</h3>
                 <?php
                 if($_GLOBALS['message']) {
-                    echo "<div class=\"message\">".$_GLOBALS['message']."</div>";
+                    echo "<div class=\"message text-center col-md-8 col-md-offset-2 alert alert-danger\">".$_GLOBALS['message']."</div>";
                 }
                 ?>
 

@@ -9,10 +9,9 @@ if(isset($_POST['prev']) && $_POST['prev'] == 1){
 	exit;
 
 } else if(isset($_POST['next']) && $_POST['next'] == 1 
-	&& !empty($_POST['value']) && !empty($_POST['current_que'])){
+	&& !empty($_POST['value'])  && !empty($_POST['current_que'])){
 
 	$value = $_POST['value'];
-
 	if($value == '' || $value == 'undefined'){
 		$value = '';
 	}

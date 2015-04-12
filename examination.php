@@ -19,7 +19,6 @@ foreach ($_SESSION as $key => $value) {
 }
 
 //unset($_SESSION['qa']);
-
 if(!isset($_SESSION['qa']) || empty($_SESSION['qa'])){
 	$q = "select * from question_gpa where subject = '".$subject."' and branch = '".$user_branch."' and sem = '".$user_sem."' order by RAND() limit 30";
 	$res = executeQuery($q);
@@ -155,7 +154,9 @@ if(!isset($_SESSION['current_que']) || empty($_SESSION['current_que'])){
 				</div>
 
 				<input type="hidden" id="current_que" value="<?php echo $_SESSION['current_que']; ?>" />
+
 				<div class="col-md-6 col-md-offset-3">
+					
 					<?php if($_SESSION['current_que'] != 1){ ?>
 					<button type="" id="prev_button" onclick="getPrevQue(); return false;" class="btn btn-primary"><i class="fa fa-fw fa-arrow-left"></i>Previous</button>
 					<?php } ?>
@@ -164,7 +165,9 @@ if(!isset($_SESSION['current_que']) || empty($_SESSION['current_que'])){
 					<button type="" id="next_button" onclick="getNextQue(); return false;" class="btn btn-primary">Next<i class="fa fa-fw fa-arrow-right"></i></button>
 					<?php } ?>
 
+					<?php if($_SESSION['current_que'] == 30){ ?>
 					<a href="result_count.php" id="endExamBtn" class="btn btn-warning">End-Exam<i class="fa fa-fw"></i></a>
+					<?php } ?>
 
 				</div>
 

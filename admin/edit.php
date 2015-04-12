@@ -119,16 +119,16 @@ if(isset($_POST['update']))
             <label for="selectBranch" class="control-label col-sm-3">Branch </label>
             <div class="col-md-5">
               <select name="branch" class="form-control" value="<?php echo $row_fetch_register['branch']; ?>" id="selectBranch" class="" required>
-                <option <?php if($row_fetch_register['branch'] == 'automobile') { echo 'selected="selected"'; } ?>>Auto Mobile Engineering</option>
-                <option <?php if($row_fetch_register['branch'] == 'biomedical') { echo 'selected="selected"'; } ?>>Bio Medical Engineering</option>
-                <option <?php if($row_fetch_register['branch'] == 'civil') { echo 'selected="selected"'; } ?>>Civil Engineering</option>
-                <option <?php if($row_fetch_register['branch'] == 'computer') { echo 'selected="selected"'; } ?>>Computer Engineering</option>
-                <option <?php if($row_fetch_register['branch'] == 'electrical') { echo 'selected="selected"'; } ?>>Electrical Engineering</option>
-                <option <?php if($row_fetch_register['branch'] == 'ec') { echo 'selected="selected"'; } ?>>Electronics & Communication Engineering</option>
-                <option <?php if($row_fetch_register['branch'] == 'it') { echo 'selected="selected"'; } ?>>Information Technology</option>
-                <option <?php if($row_fetch_register['branch'] == 'ic') { echo 'selected="selected"'; } ?>>Instrumention & Control Engineering</option>
-                <option <?php if($row_fetch_register['branch'] == 'mechanical') { echo 'selected="selected"'; } ?>>Mechanical Engineering</option>
-                <option <?php if($row_fetch_register['branch'] == 'plastic') { echo 'selected="selected"'; } ?>>Plastic Engineering</option>
+                <option value="automobile" <?php if($row_fetch_register['branch'] == 'automobile') { echo 'selected="selected"'; } ?>>Auto Mobile Engineering</option>
+                <option value="biomedical" <?php if($row_fetch_register['branch'] == 'biomedical') { echo 'selected="selected"'; } ?>>Bio Medical Engineering</option>
+                <option value="civil" <?php if($row_fetch_register['branch'] == 'civil') { echo 'selected="selected"'; } ?>>Civil Engineering</option>
+                <option value="computer" <?php if($row_fetch_register['branch'] == 'computer') { echo 'selected="selected"'; } ?>>Computer Engineering</option>
+                <option value="electrical" <?php if($row_fetch_register['branch'] == 'electrical') { echo 'selected="selected"'; } ?>>Electrical Engineering</option>
+                <option value="ec" <?php if($row_fetch_register['branch'] == 'ec') { echo 'selected="selected"'; } ?>>Electronics & Communication Engineering</option>
+                <option value="it" <?php if($row_fetch_register['branch'] == 'it') { echo 'selected="selected"'; } ?>>Information Technology</option>
+                <option value="ic" <?php if($row_fetch_register['branch'] == 'ic') { echo 'selected="selected"'; } ?>>Instrumention & Control Engineering</option>
+                <option value="mechanical" <?php if($row_fetch_register['branch'] == 'mechanical') { echo 'selected="selected"'; } ?>>Mechanical Engineering</option>
+                <option value="plastic" <?php if($row_fetch_register['branch'] == 'plastic') { echo 'selected="selected"'; } ?>>Plastic Engineering</option>
               </select>
             </div>
           </div>

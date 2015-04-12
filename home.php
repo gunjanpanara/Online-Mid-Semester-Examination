@@ -1,7 +1,7 @@
 <?php 
 error_reporting(0);
-include_once 'check_user_session.php';
-include_once 'oesdb.php';
+include_once ('check_user_session.php');
+include_once ('oesdb.php');
 
 $res = executeQuery("select * from reg_gpa where id=".$_SESSION['user_id']);
 $arr = mysql_fetch_assoc($res);
@@ -18,17 +18,9 @@ $arr = mysql_fetch_assoc($res);
 
     if($_GLOBALS['message']) 
     {
-        echo "<div class=\"message\">".$_GLOBALS['message']."</div>";
+        echo "<div class=\"message col-md-8 col-md-offset-2 alert alert-success\">".$_GLOBALS['message']."</div>";
     }
     
-    $q_fetch_register = "select * from reg_gpa where id=$id";
-    $q_fetch_login = "select * from login_gpa where id=$id";
-
-    $res_fetch_register = executeQuery($q_fetch_register);
-    $res_fetch_login = executeQuery($q_fetch_login);
-
-    $row_fetch_register = mysql_fetch_assoc($res_fetch_register);
-    $row_fetch_login = mysql_fetch_assoc($res_fetch_login);
     ?>
 
     <div class="container home-container">
@@ -64,8 +56,24 @@ $arr = mysql_fetch_assoc($res);
                         <span class="lbl">Gender</span> <span class="data"><?php echo $arr['gender']; ?></span>
                     </a>
                     <a href="edit.php">
-                        <span class="lbl">Branch</span> <span class="data branch-display"><?php echo $arr['branch']; ?></span>
+                        <span class="lbl">Branch</span> <span class="data branch-display">
+                            <?php
+                            if($arr['branch'] == 'automobile') { echo "Auto Mobile Engineering"; }
+                            else if($arr['branch'] == 'biomedical') { echo "Bio Medical Engineering";}
+                            else if($arr['branch'] == 'civil') { echo "Civil Engineering"; }
+                            else if($arr['branch'] == 'computer') { echo "Computer Engineering"; }
+                            else if($arr['branch'] == 'electrical') { echo "Electrical Engineering"; }
+                            else if($arr['branch'] == 'ec') { echo "Electronics & Communication Engineering"; }
+                            else if($arr['branch'] == 'it') { echo "Information Technology"; }
+                            else if($arr['branch'] == 'ic') { echo "Instrumention & Control Engineering"; }
+                            else if($arr['branch'] == 'mechanical') { echo "Mechanical Engineering"; }
+                            else if($arr['branch'] == 'plastic') { echo "Plastic Engineering"; }
+                            else{}
+                            ?>
+                        </span>
                     </a>
+
+
                     <a href="edit.php">
                         <span class="lbl">Semester</span> <span class="data"><?php echo $arr['sem']; ?></span>
                     </a>
