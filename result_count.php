@@ -51,6 +51,7 @@ $sem = $arr['sem'];
 
 $q = "insert into result_gpa (user_id,branch,sem,subject,attend_que,obtained_marks,exam_date)
 	values ($user_id,'$branch',$sem,'$subject',$attend_que,$obtained_marks,'$exam_date')";
+	
 $res = executeQuery($q);
 if (!$res) {
 	echo "error inserting result data";

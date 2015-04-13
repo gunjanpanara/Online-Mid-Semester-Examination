@@ -26,8 +26,13 @@ $filepage = end($filepage);
 						<li><a href="register.php"><i class="fa fa-user fa-fw"></i> Register</a></li>
 						<li><a href="login.php"><i class="fa fa-sign-in fa-fw"></i> Login</a></li>
 					<?php } ?>
+
 				</ul>
+				<div id="clockcontainer">
+					<div id="countdown-1"></div>
+				</div>
 			</div>
 		</div>
 	</div>
 </header>
+<!-- <script type="text/javascript" src="js/script.js"></script> -->

@@ -15,8 +15,11 @@ $dbserver="localhost";
 $dbusername="root";
 
 //password
-
-$dbpassword="";
+if($_SERVER['HTTP_HOST'] == '192.168.4.163'){
+	$dbpassword="root";
+} else {
+	$dbpassword="";
+}
 
 //database name of the online Examination system
 $dbname="oes_gpa";

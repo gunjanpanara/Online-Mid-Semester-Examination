@@ -378,3 +378,9 @@ footer a {
 footer a:hover {
 	color: #FFF;
 }
+
+#clockcontainer{
+	float: right;
+	margin-top: 27px;
+	margin-right: 150px;
+}
