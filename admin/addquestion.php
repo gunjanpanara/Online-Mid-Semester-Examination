@@ -46,7 +46,7 @@ if(isset($_POST['addque']))
 
   <div class="container edit-container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-8 col-md-offset-2">
             <p class="text-center lead">Generate Paper</p>        
 
             <form id="add_question_form" class="form-horizontal" role="form" action="" method="POST">
@@ -86,25 +86,38 @@ if(isset($_POST['addque']))
                   </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group  ">
                     <label class="control-label col-md-2">Answer </label>
                     <div class="col-md-9">
-                        <div class="radio radio-inline">                    
-                            <input type="radio" name="answer" value="option_a" required/>
+                        
+                        <label>
+                            <div class="radio radio-inline">                    
+                                <input type="radio" name="answer" value="option_a" required/>
                                 <span class="label-text">A</span>
-                        </div>
-                        <div class="radio radio-inline">                    
-                            <input type="radio" name="answer" value="option_b" required/>
+                            </div>
+                        </label>
+                        
+                        <label>
+                            <div class="radio radio-inline">                    
+                                <input type="radio" name="answer" value="option_b" required/>
                                 <span class="label-text">B</span>
-                        </div>
-                        <div class="radio radio-inline">                    
-                            <input type="radio" name="answer" value="option_c" required/>
+                            </div>
+                        </label>
+
+                        <label>
+                            <div class="radio radio-inline">                    
+                                <input type="radio" name="answer" value="option_c" required/>
                                 <span class="label-text">C</span>
-                        </div>
-                        <div class="radio radio-inline">                    
-                            <input type="radio" name="answer" value="option_d" required/>
+                            </div>
+                        </label>
+                        
+                        <label>
+                            <div class="radio radio-inline">                    
+                                <input type="radio" name="answer" value="option_d" required/>
                                 <span class="label-text">D</span>
-                        </div>
+                            </div>
+                        </label>
+
                     </div>
                 </div>
 
