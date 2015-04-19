@@ -67,7 +67,7 @@ $arr = mysql_fetch_assoc($res);
                                         <!-- end script -->
 
                                         <?php
-                                            if($row['filetype'] == 'doc' || $row['filetype'] == 'docx'){
+                                          /*  if($row['filetype'] == 'doc' || $row['filetype'] == 'docx'){
                                                 $image = 'admin/img/docx.png';
                                             } else if($row['filetype'] == 'pdf'){
                                                 $image = 'admin/img/pdf.png';
@@ -76,12 +76,12 @@ $arr = mysql_fetch_assoc($res);
                                             } else if($row['filetype'] == 'xls' || $row['filetype'] == 'xlsx'){
                                                 $image = 'admin/img/xls.png';
                                             }
-
-                                            $branch_id = $row['branch_id'];
+*/
+                                           /* $branch_id = $row['branch_id'];
                                             $q = 'select name from branch where id = '.$branch_id;
                                             $data = mysql_query($q);
                                             $branch_name = mysql_fetch_assoc($data);
-                                        ?>
+*/                                        ?>
 
                                         <tr class="odd gradeX">
                                             <td width="40"><?php echo $count; ?></td>

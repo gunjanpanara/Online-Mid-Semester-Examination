@@ -57,6 +57,13 @@ if(isset($_REQUEST['submit']))
 	else if(email_exists($email))
 		$_GLOBALS['message']="Sorry the mail address is already been taken.";
 
+	
+    else if (strlen($_POST['pswd']) < 6 && strlen($_POST['pswd']) >14) {
+                $_GLOBALS['message'] = 'Your password must be between 6 to 14 character.';
+            }
+    else if (strlen($_POST['phone']) > 10 ) {
+                $_GLOBALS['message'] = 'please enter a valid phone no.';
+            }
 	else
 	{
 
@@ -78,8 +85,8 @@ if(isset($_REQUEST['submit']))
 ?>
 
 <!DOCTYPE html>
-<html>
-
+<head>
+</head>
 <?php include ('include/head.php'); ?>
 
 <body>
@@ -92,7 +99,7 @@ if(isset($_REQUEST['submit']))
 				<h3 class="text-center">Student Registration</h3>
 				<?php
 				if($_GLOBALS['message']) {
-					echo "<div class=\"message text-center col-md-8 col-md-offset-2 alert alert-danger\">".$_GLOBALS['message']."</div>";
+					echo "<div class=\"message text-center col-md-8 co.l-md-offset-2 alert alert-danger\">".$_GLOBALS['message']."</div>";
 				}
 				if(!@$res||!@$res1)
 			$_GLOBALS['message']=mysql_error();
@@ -134,7 +141,7 @@ if(isset($_REQUEST['submit']))
 					<div class="form-group">
 						<label for="enrollmentNumber" class="control-label col-md-3">Enrollment No. *</label>
 						<div class="col-md-5">
-							<input type="number" name="enroll" class="form-control" id="enrollmentNumber" placeholder="Enrollment No." required/>
+							<input type="number" name="enroll" class="form-control" id="enrollmentNumber" placeholder="Enrollment No." onkeyup="isnum(this)" required/>
 						</div>
 
 					</div>
@@ -206,7 +213,7 @@ if(isset($_REQUEST['submit']))
 					<div class="form-group">
 						<label for="contactNumber" class="control-label col-md-3">Phone* </label>
 						<div class="col-md-5">
-							<input type="number" name="phone" class="form-control" id="contactNumber" placeholder="Contact Number" required/>
+							<input type="number" name="phone" size="16" class="form-control" id="contactNumber" placeholder="Contact Number" required onkeyup="isnum(this)" />
 						</div>
 					</div>  
 
@@ -220,14 +227,14 @@ if(isset($_REQUEST['submit']))
 					<div class="form-group">
 						<label for="cityInput" class="control-label col-md-3">City </label>
 						<div class="col-md-5">
-							<input type="text" name="city" class="form-control" id="cityInput" placeholder="City">
+							<input type="text" name="city" class="form-control" id="cityInput" placeholder="City" onkeyup="isalpha(this)">
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label for="pinNumber" class="control-label col-md-3">PIN </label>
 						<div class="col-md-5">
-							<input type="number" name="pin" class="form-control" id="pinNumber" placeholder="6-digit PIN Number">
+							<input type="number" name="pin" class="form-control" id="pinNumber" placeholder="6-digit PIN Number" onkeyup="isnum(this)"/>
 						</div>
 					</div>	
 					<div class="form-group">

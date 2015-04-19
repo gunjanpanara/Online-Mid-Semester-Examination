@@ -1,3 +1,7 @@
+<?php
+$filepage = explode('/',$_SERVER['REQUEST_URI']);
+$filepage = end($filepage);
+?>
 <link rel="icon" href="images/favicon.png">
 
 	<title>Online Mid-Semester Examination System | Government Polytechnic, Ahmedabad</title>
@@ -14,3 +18,8 @@
 
 <!-- JS -->
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<?php if($filepage != 'register.php'){ ?>
+
+<script type="text/javascript" src="js/validate.js" ></script>
+
+<?php } ?>
