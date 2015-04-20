@@ -131,68 +131,67 @@ if(isset($_REQUEST['submit']))
                         <label for="usernameInput" class="control-label col-md-3">Username*</label>
                         <div class="col-md-5">
                           <input type="text" name="username" class="form-control" id="usernameInput" placeholder="Username" required/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="passwordText" class="control-label col-md-3">Password* </label>
+                        <div class="col-md-5">
+                            <input type="password" name="pswd" class="form-control" id="passwordText" placeholder="Password" data-toggle="tooltip" data-placement="right" title="password must be between 6-14 character" required/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="passwordConfirm" class="control-label col-md-3">Confirm Password* </label>
+                        <div class="col-md-5">
+                            <input type="password" name="pswd_again" class="form-control" id="passwordConfirm" placeholder="Confirm Password" required/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="selectBranch" class="control-label col-md-3">Branch* </label>
+                        <div class="col-md-5">
+                        <select name="branch" class="form-control" id="selectBranch" required>
+                            <option value="">- - Select Branch - -</option>
+                            <option value="automobile">AUTO MOBILE ENGINEERING</option>
+                            <option value="biomedical">BIO MEDICAL ENGINEERING</option>
+                            <option value="biomedical">CIVIL ENGINEERING</option>
+                            <option value="computer">COMPUTER ENGINEERING</option>
+                            <option value="electrical">ELECTRICAL ENGINEERING</option>
+                            <option value="ec">ELECTRONICS &amp; COMMUNICATION ENGINEERING</option>
+                            <option value="it">INFORMATION TECHNOLOGY</option>
+                            <option value="ic">INSTRUMENTION &amp; CONTROL ENGINEERING</option>
+                            <option value="mechanical">MECHANICAL ENGINEERING</option>
+                            <option value="plastic">PLASTIC ENGINEERING</option>
+                        </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailInput" class="control-label col-md-3">E-Mail ID* </label>
+                        <div class="col-md-5">
+                            <input type="email" name="email" class="form-control" id="emailInput" placeholder="Valid E-Mail Address" required/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactNumber" class="control-label col-md-3">Phone* </label>
+                        <div class="col-md-5">
+                            <input type="number" name="phone" class="form-control" id="contactNumber" placeholder="Contact Number" required/>
+                        </div>
+                    </div>  
+
+                    <div class="form-group">
+                      <div class="col-md-6 col-md-offset-3">
+                          <p>* Fields marked with an asterisk sign are required</p>
+                          <button type="submit" class="btn btn-primary" name="submit" >Submit</button>
+                          <button type="reset" class="btn btn-primary" name="reset" >Reset</button>
                       </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="passwordText" class="control-label col-md-3">Password* </label>
-                    <div class="col-md-5">
-                      <input type="password" name="pswd" class="form-control" id="passwordText" placeholder="Password" data-toggle="tooltip" data-placement="right" title="password must be between 6-14 character" required/>
-                  </div>
-              </div>
-
-              <div class="form-group">
-                <label for="passwordConfirm" class="control-label col-md-3">Confirm Password* </label>
-                <div class="col-md-5">
-                  <input type="password" name="pswd_again" class="form-control" id="passwordConfirm" placeholder="Confirm Password" required/>
-              </div>
-          </div>
-
-
-          <div class="form-group">
-            <label for="selectBranch" class="control-label col-md-3">Branch* </label>
-            <div class="col-md-5">
-              <select name="branch" class="form-control" id="selectBranch" required>
-                <option value="">- - Select Branch - -</option>
-                <option value="automobile">AUTO MOBILE ENGINEERING</option>
-                <option value="biomedical">BIO MEDICAL ENGINEERING</option>
-                <option value="biomedical">CIVIL ENGINEERING</option>
-                <option value="computer">COMPUTER ENGINEERING</option>
-                <option value="electrical">ELECTRICAL ENGINEERING</option>
-                <option value="ec">ELECTRONICS &amp; COMMUNICATION ENGINEERING</option>
-                <option value="it">INFORMATION TECHNOLOGY</option>
-                <option value="ic">INSTRUMENTION &amp; CONTROL ENGINEERING</option>
-                <option value="mechanical">MECHANICAL ENGINEERING</option>
-                <option value="plastic">PLASTIC ENGINEERING</option>
-            </select>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-
-    <div class="form-group">
-        <label for="emailInput" class="control-label col-md-3">E-Mail ID* </label>
-        <div class="col-md-5">
-          <input type="email" name="email" class="form-control" id="emailInput" placeholder="Valid E-Mail Address" required/>
-      </div>
-  </div>
-
-  <div class="form-group">
-    <label for="contactNumber" class="control-label col-md-3">Phone* </label>
-    <div class="col-md-5">
-      <input type="number" name="phone" class="form-control" id="contactNumber" placeholder="Contact Number" required/>
-  </div>
-</div>  
-
-<div class="form-group">
-  <div class="col-md-6 col-md-offset-3">
-      <p>* Fields marked with an asterisk sign are required</p>
-      <button type="submit" class="btn btn-primary" name="submit" >Submit</button>
-      <button type="reset" class="btn btn-primary" name="reset" >Reset</button>
-  </div>
-</div>
-</form>
-</div>
-</div>
-</div>
 
 </body>
 

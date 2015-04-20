@@ -29,7 +29,6 @@ if(!isset($_SESSION['qa']) || empty($_SESSION['qa'])){
 
 ?>
 
-
 <html>
 
 <?php include ('include/head.php'); ?>
@@ -40,9 +39,7 @@ if(!isset($_SESSION['qa']) || empty($_SESSION['qa'])){
 
 	<?php include ('include/header.php'); ?>
 
-
 	<iframe id="exam_frame" width="100%" height="450" frameborder="0" scrolling="no" src="exam_frame.php"></iframe>
-	
 
 	<?php include ('include/footer.php'); ?>
 	<script type="text/javascript" src="js/timeTo.js"></script>
@@ -51,10 +48,11 @@ if(!isset($_SESSION['qa']) || empty($_SESSION['qa'])){
 		{
 			$('#countdown-1').timeTo(5, function()
 			{
-				alert('Your exam time is complete. You are Redirecting to Result page');
+				alert('Your examination time is completed.\nYou are Redirecting to Result page.');
 				window.location.assign("result_count.php");
 			});
 		});
 	</script>
-</body>
+
+	</body>
 </html>

@@ -99,7 +99,7 @@ if(isset($_REQUEST['submit']))
 				<h3 class="text-center">Student Registration</h3>
 				<?php
 				if($_GLOBALS['message']) {
-					echo "<div class=\"message text-center col-md-8 co.l-md-offset-2 alert alert-danger\">".$_GLOBALS['message']."</div>";
+					echo "<div class=\"message text-center col-md-8 col-md-offset-2 alert alert-danger\">".$_GLOBALS['message']."</div>";
 				}
 				if(!@$res||!@$res1)
 			$_GLOBALS['message']=mysql_error();
