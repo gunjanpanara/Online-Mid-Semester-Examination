@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 12, 2015 at 05:23 PM
+-- Generation Time: Apr 20, 2015 at 02:35 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.16
 
@@ -21,6 +21,19 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `oes_gpa` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `oes_gpa`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `download`
+--
+
+CREATE TABLE IF NOT EXISTS `download` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `syllabus` varchar(50) NOT NULL,
+  `prevpaper` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Download Study Material Table' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -55,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `login_gpa` (
   `user` varchar(20) NOT NULL,
   `pswd` varchar(24) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
 
 --
 -- Dumping data for table `login_gpa`
@@ -63,7 +76,8 @@ CREATE TABLE IF NOT EXISTS `login_gpa` (
 
 INSERT INTO `login_gpa` (`id`, `r_id`, `user`, `pswd`) VALUES
 (27, 27, '123', '123'),
-(28, 28, '1212', '1212');
+(28, 28, '1212', '1212'),
+(29, 29, '32132132123', 'vish');
 
 -- --------------------------------------------------------
 
@@ -83,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `question_gpa` (
   `option_d` varchar(200) NOT NULL,
   `answer` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=183 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=185 ;
 
 --
 -- Dumping data for table `question_gpa`
@@ -267,7 +281,9 @@ INSERT INTO `question_gpa` (`id`, `branch`, `sem`, `subject`, `question`, `optio
 (179, 'biomedical', 1, 'ENGLISH', 'quest 1', 'Option 1', 'OPTION 2', 'OPTION 3', 'OPTION 4', 'option_a'),
 (180, 'computer', 3, 'OPERATING SYSTEM', 'jhg', 'lkhg', 'lkhg', 'lhg', 'lhg', ''),
 (181, 'computer', 3, 'OPERATING SYSTEM', 'jhg', 'lkhg', 'lkhg', 'lhg', 'lhg', ''),
-(182, 'computer', 3, 'OPERATING SYSTEM', 'lihbj', 'lkjb', 'lkhg', 'kjhv', 'kj ', '');
+(182, 'computer', 3, 'OPERATING SYSTEM', 'lihbj', 'lkjb', 'lkhg', 'kjhv', 'kj ', ''),
+(183, 'biomedical', 4, 'MICROPROCESSOR AND ASSEMBLY LANGUAGE PRO', 'new question', 'ans a', 'ans b', 'ans c', 'ans d', 'option_b'),
+(184, 'computer', 3, 'OPERATING SYSTEM', 'jhg', 'a', 'b', 'c', 'd', 'option_c');
 
 -- --------------------------------------------------------
 
@@ -318,7 +334,7 @@ CREATE TABLE IF NOT EXISTS `reg_gpa` (
   `cdate` datetime NOT NULL,
   `mdate` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Registration Table of OES_GPA' AUTO_INCREMENT=29 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Registration Table of OES_GPA' AUTO_INCREMENT=30 ;
 
 --
 -- Dumping data for table `reg_gpa`
@@ -326,7 +342,8 @@ CREATE TABLE IF NOT EXISTS `reg_gpa` (
 
 INSERT INTO `reg_gpa` (`id`, `fname`, `lname`, `gender`, `enroll`, `sem`, `branch`, `dob`, `email`, `phone`, `address`, `city`, `pin`, `cdate`, `mdate`) VALUES
 (27, 'Manan', 'Patel', 'male', 123, 6, 'it', '2015-04-15', 'mananpatel@gmail.com', 2147483647, 'Janakpuri', 'Junagadh', 362001, '2015-04-06 12:32:14', '2015-04-12 05:18:26'),
-(28, 'Sagar', 'Jasani', 'male', 1212, 4, 'computer', '1992-05-02', 'sagarjasani@gmail.com', 21474, 'Bapunagar', 'Ahmedabad', 380006, '2015-04-11 07:56:03', '2015-04-11 10:31:57');
+(28, 'Sagar', 'Jasani', 'male', 1212, 4, 'computer', '1992-05-02', 'sagarjasani@gmail.com', 21474, 'Bapunagar', 'Ahmedabad', 380006, '2015-04-11 07:56:03', '2015-04-15 05:09:22'),
+(29, 'Vish', 'Soni', 'female', 2147483647, 6, 'biomedical', '2015-12-12', 'vishsoni30@gmail.com', 651465123, 'dfb645Dbxd54vGe67\r\n', '986235786', 984651, '2015-04-19 05:21:45', NULL);
 
 -- --------------------------------------------------------
 
@@ -344,7 +361,7 @@ CREATE TABLE IF NOT EXISTS `result_gpa` (
   `obtained_marks` int(2) NOT NULL,
   `exam_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Examinaiton Result Data Store' AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Examinaiton Result Data Store' AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `result_gpa`
@@ -354,7 +371,19 @@ INSERT INTO `result_gpa` (`id`, `user_id`, `branch`, `sem`, `subject`, `attend_q
 (1, 27, 'it', 6, '', 0, 0, '2015-04-12 08:30:26'),
 (2, 27, 'it', 6, 'ANDROID APPS DEVELOPMENT', 7, 2, '2015-04-12 08:33:45'),
 (3, 27, 'it', 6, 'ANDROID APPS DEVELOPMENT', 26, 8, '2015-04-12 08:41:09'),
-(4, 28, 'computer', 4, 'COMPUTER NETWORKS', 10, 2, '2015-04-12 10:55:43');
+(4, 28, 'computer', 4, 'COMPUTER NETWORKS', 10, 2, '2015-04-12 10:55:43'),
+(5, 28, 'computer', 4, 'COMPUTER NETWORKS', 2, 0, '2015-04-14 09:58:54'),
+(6, 28, 'computer', 4, 'COMPUTER NETWORKS', 0, 0, '2015-04-14 10:01:30'),
+(7, 28, 'computer', 4, 'COMPUTER NETWORKS', 27, 4, '2015-04-14 10:04:51'),
+(8, 28, 'computer', 4, '', 0, 0, '2015-04-14 10:04:58'),
+(9, 28, 'computer', 4, 'COMPUTER NETWORKS', 0, 0, '2015-04-14 10:05:11'),
+(10, 28, 'computer', 4, 'COMPUTER NETWORKS', 0, 0, '2015-04-14 10:06:15'),
+(11, 28, 'computer', 4, 'COMPUTER NETWORKS', 0, 0, '2015-04-14 10:06:28'),
+(12, 28, 'computer', 4, 'COMPUTER NETWORKS', 0, 0, '2015-04-14 10:07:35'),
+(13, 28, 'computer', 4, 'COMPUTER NETWORKS', 0, 0, '2015-04-14 10:07:54'),
+(14, 28, 'computer', 4, 'COMPUTER NETWORKS', 0, 0, '2015-04-14 10:08:17'),
+(15, 28, 'computer', 4, 'COMPUTER NETWORKS', 1, 1, '2015-04-15 05:09:38'),
+(16, 28, 'computer', 4, 'COMPUTER NETWORKS', 1, 1, '2015-04-20 09:41:56');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
