@@ -1,21 +1,14 @@
 <?php
 
-/*
-***************************************************
-*** Online Mid-Examination System               ***
-***---------------------------------------------***
-*** Title: Database Settings                    ***
-***************************************************
-*/
+/**** Title: Database Settings ****/
 
 //This is the name of your server where the MySQL database is running
-$dbserver="localhost";
+$dbserver="e-examination.in";
 
 //username of the MySQL server
 $dbusername="root";
 
 //password
-
 $dbpassword="";
 
 //database name of the online Examination system

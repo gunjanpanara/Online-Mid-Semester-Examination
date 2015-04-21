@@ -1,4 +1,8 @@
-<?php include_once 'check_user_session.php'; 
+<?php 
+
+/**** Title: Conduct Examination ****/
+
+include_once 'check_user_session.php'; 
 include_once 'oesdb.php';
 
 if(isset($_POST['subject']) && !empty($_POST['subject'])){

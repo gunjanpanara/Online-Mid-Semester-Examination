@@ -1,4 +1,4 @@
-<?php  
+<?php
 include_once 'oesdb.php';
 
 function sanitize($data)

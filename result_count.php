@@ -4,8 +4,11 @@
 
 <?php
 
+/**** Title: Display Current Examination Result ****/
+
 include_once 'check_user_session.php'; 
 include_once 'oesdb.php';
+
 
 $res = executeQuery("select * from reg_gpa where id=".$_SESSION['user_id']);
 $arr = mysql_fetch_assoc($res);

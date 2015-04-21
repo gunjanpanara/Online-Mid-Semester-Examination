@@ -1,18 +1,8 @@
 <?php
 
-/*
-*********************************************
-*** Title: Student Registration           ***
-*********************************************
-*/
+/**** Title: Student Registration ****/
 
-/* Procedure
-*********************************************
-Step 1: Submit - Add the new Student to the System.
-
-Step 2: Display the HTML page to receive the required information.
-*********************************************
-*/
+/**** Procedure: Add the new Student to the System. ****/
 
 error_reporting(0);
 session_start();

@@ -130,7 +130,7 @@ if(isset($_REQUEST['submit']))
                     <div class="form-group">
                         <label for="usernameInput" class="control-label col-md-3">Username*</label>
                         <div class="col-md-5">
-                          <input type="text" name="username" class="form-control" id="usernameInput" placeholder="Username" required/>
+                          <input type="text" name="username" class="form-control" id="usernameInput" placeholder="Username" onkeyup="isalpha(this)" required/>
                         </div>
                     </div>
 
@@ -177,7 +177,7 @@ if(isset($_REQUEST['submit']))
                     <div class="form-group">
                         <label for="contactNumber" class="control-label col-md-3">Phone* </label>
                         <div class="col-md-5">
-                            <input type="number" name="phone" class="form-control" id="contactNumber" placeholder="Contact Number" required/>
+                            <input type="number" name="phone" class="form-control" id="contactNumber" placeholder="Contact Number" onkeyup="isnum(this)" required/>
                         </div>
                     </div>  
 

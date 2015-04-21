@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+/**** Title: Home Page for Student ****/
+
 error_reporting(0);
 include_once ('check_user_session.php');
 include_once ('oesdb.php');

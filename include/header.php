@@ -1,4 +1,7 @@
 <?php
+
+/**** Title: Header/Navigation Pane ****/
+
 $filepage = explode('/',$_SERVER['REQUEST_URI']);
 $filepage = end($filepage);
 ?>

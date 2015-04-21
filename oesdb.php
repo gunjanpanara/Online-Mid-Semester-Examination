@@ -1,12 +1,6 @@
 <?php
 
-/*
-***************************************************
-*** Online Mid-Examination System               ***
-***---------------------------------------------***
-*** Title: Database Library Functions           ***
-***************************************************
-*/
+/**** Title: Database Library Functions ****/
 
 include_once 'dbsettings.php';
 

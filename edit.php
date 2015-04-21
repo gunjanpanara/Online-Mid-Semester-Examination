@@ -1,4 +1,7 @@
 <?php
+
+/**** Title: Update User Information ****/
+
 include_once 'check_user_session.php';
 error_reporting(0);
 include_once 'oesdb.php';

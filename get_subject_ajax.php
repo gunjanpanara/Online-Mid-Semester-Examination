@@ -1,4 +1,7 @@
 <?php
+
+/**** Title: Fetch Subjects for Particular User ****/
+
 include('array.php');
 
 $branch = $_POST['branch'];

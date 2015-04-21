@@ -1,4 +1,7 @@
 <?php
+
+/**** Title: Array For The Selection of Branch, Semester & Subject ****/
+
 $subject = array(
 			'automobile'=>array(
 							'1'=>array(

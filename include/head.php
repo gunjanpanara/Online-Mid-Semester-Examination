@@ -1,4 +1,7 @@
 <?php
+
+/**** Title: Head/Link External Files ****/
+
 $filepage = explode('/',$_SERVER['REQUEST_URI']);
 $filepage = end($filepage);
 ?>

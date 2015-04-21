@@ -1,4 +1,8 @@
-<?php include_once 'check_user_session.php'; 
+<?php 
+
+/**** Title: Count Current Examination Result ****/
+
+include_once 'check_user_session.php'; 
 include_once 'oesdb.php';
 
 if(isset($_POST['prev']) && $_POST['prev'] == 1){

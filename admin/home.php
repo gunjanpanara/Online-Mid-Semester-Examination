@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+/**** Title: Home Page for Examiner ****/
+
 error_reporting(0);
 include_once 'check_user_session.php';
 include_once 'oesdb.php';

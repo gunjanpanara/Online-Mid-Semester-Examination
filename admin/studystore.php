@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-    <?php include ('include/head.php'); ?>
-    <?php include ('include/connection.php'); ?>
+<?php 
+
+/**** Title: Upload Study Material ****/
+
+include ('include/head.php');
+include ('include/connection.php'); ?>
 
 <body>
 

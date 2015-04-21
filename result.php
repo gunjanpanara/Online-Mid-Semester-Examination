@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 
-<?php include ('include/head.php');
+<?php 
+
+/**** Title: Display Examination Results ****/
+
+include ('include/head.php');
 include ('include/connection.php');
 include ('check_user_session.php');
 include ('oesdb.php');

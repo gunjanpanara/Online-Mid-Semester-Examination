@@ -1,4 +1,7 @@
 <?php 
+
+/**** Title: Generate Question Paper/Add Questions ****/
+
 include_once 'check_user_session.php';
 include_once 'oesdb.php';
 
